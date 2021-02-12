@@ -3,15 +3,15 @@
 # Version 1.0
 
 # Description:
-# Generates composite glyphs from the SMuFL PUA range in codepoints 
-# compatible with Finale's Maestro font for Mac & Windows, and alters 
-# metrics and registration to comply with the software. 
+# Generates composite glyphs from the SMuFL PUA range in codepoints
+# compatible with Finale's Maestro font for Mac & Windows, and alters
+# metrics and registration to comply with the software.
 
 # Glyphs with Preexisting composite glyphs at appropriate codepoints
 # are automatically skipped.
 
 
-# CAUTION! 
+# CAUTION!
 # Script will decompose any components in the reference glyphs
 # prior to generating new glyphs.
 
@@ -37,7 +37,7 @@ print "Starting ..."
 from FL import *
 
 
-# List of glyphs to generate 
+# List of glyphs to generate
 # (SMuFL name, Windows name, Mac name, Mac unicode index)
 genList = {
 'uniE01A': ('uniF03D', 'equal', 61, 0),
@@ -235,7 +235,7 @@ print 'Checking source material ...'
 for smuflName in genList:
 	if not f.has_key(smuflName):
 		print smuflName + ' is missing'
-		
+
 for g in f.glyphs:
 	if g.name in genList and len(g.components) > 0:
 		g.Decompose()
@@ -251,7 +251,7 @@ def uIndx(osName):
 
 # Main process definition
 def generateGlyphs(osName):
-					
+
 	smuflIndx = f.FindGlyph(smuflName)
 	smuflGlyph = f.glyphs[smuflIndx]
 	newGlyph = Glyph()
@@ -274,30 +274,28 @@ def generateGlyphs(osName):
 # elif 'uni' in str(metricsMod):
 	elif metricsMod is not str(metricsMod):
 		offset = int(metricsMod)
-	
+
 	if f.has_key(osName):
 		print 'Skipping prexisting glyph: ' + (osName)
 	else:
 		newGlyph.components.append(Component(smuflIndx, Point(0,offset)))
- 
+
 # Set metrics
 		metrics = smuflGlyph.GetMetrics()
 		if metricsMod == 'zeroWidth':
 			metrics.x = bBox.width
 		newGlyph.SetMetrics(metrics)
-			
-			
+
+
 		f.glyphs.append(newGlyph)
-		
-		
+
+
 # Execute definitions
 print 'Creating new glyphs ...'
 for smuflName, (winName, macName, macUI, metricsMod) in genList.iteritems():
 # Uncomment one line at a time only.
 		generateGlyphs(macName)
 #		generateGlyphs(winName)
-	else:
-		print 'Please enter either Mac or Windows
 
 fl.UpdateFont(fl.ifont)
 
