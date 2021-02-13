@@ -13,4 +13,5 @@ Under the current version, FontLab will crash if you attempt to generate glyphs 
 The script does not currently support horizontal shifting of components, necessary with respect to 'uniE0CE' (noteheadParenthesis).
 
 ### copy_notes_to_glyph_names.py
-Renames glyphs with AGLFN names (uniXXXX) to descriptive SMuFL names by copying the annotations made by the script [annotate_glyphs_with_smufl_names] (https://github.com/w3c/smufl/blob/gh-pages/scripts/fontlab/annotate_glyphs_with_smufl_names.py), available at the [SMuFL repository] (https://github.com/w3c/smufl).
+Renames glyphs with AGLFN names (uniXXXX) to descriptive SMuFL names by copying the annotations made by the script [annotate_glyphs_with_smufl_names](https://github.com/w3c/smufl/blob/gh-pages/scripts/fontlab/annotate_glyphs_with_smufl_names.py), available at the [SMuFL repository] (https://github.com/w3c/smufl).
+
