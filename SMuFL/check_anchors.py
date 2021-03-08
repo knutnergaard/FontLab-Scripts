@@ -1,7 +1,7 @@
 #FLM Check Anchors
 # -*- coding: utf-8 -*-
 
-# Version 1.1
+# Version 1.0
 
 # Description:
 # Compares font anchors to latest Bravura metadata file # (published at
