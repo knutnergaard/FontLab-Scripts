@@ -43,8 +43,6 @@ def compare_anchors(dict_a, dict_b, colour):
                             g.mark = colour
                         print('\n{} / {}:'.format(aglname, name))
                     print(anchor)
-                else:
-                    print('None')
 
 
 # Get raw data.
