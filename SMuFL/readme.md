@@ -5,6 +5,8 @@ Python scripts to aide the creation of SMuFL fonts using FontLab Studio 5 and la
 ### check_anchors.py
 Compares font anchors to latest Bravura metadata file, published at the [Bravura repository](https://github.com/steinbergmedia/bravura) to find missing or superfluous glyph anchors according to the SMuFL standard. Script will print any findings and mark glyphs with discrepancies unless colour value is set to 0.
 
+Script will skip glyphs not containing descriptive SMuFL names as notes or glyph names.
+
 ### copy_notes_to_glyph_names.py
 Renames glyphs with AGLFN names (uniXXXX) to descriptive SMuFL names by copying the annotations made by the script [annotate_glyphs_with_smufl_names](https://github.com/w3c/smufl/blob/gh-pages/scripts/fontlab/annotate_glyphs_with_smufl_names.py), available at the [SMuFL repository](https://github.com/w3c/smufl).
 
