@@ -4,10 +4,13 @@
 # Version 1.0
 
 # Description:
-# Compares font anchors to latest Bravura metadata file # (published at
-# https://github.com/steinbergmedia/bravura) to find missing or # superfluous
-# glyph anchors according to the SMuFL standard. Script will print # any
-# findings and mark glyphs with discrepancies unless colour value is set to 0.
+# Compares font anchors to latest Bravura metadata file (published at
+# https://github.com/steinbergmedia/bravura) to find missing or superfluous
+# glyph anchors according to the SMuFL standard. Script will print any findings
+# and mark glyphs with discrepancies unless colour value is set to 0.
+
+# Note:
+# Script will skip glyphs not containing descriptive SMuFL names as notes or glyph names.
 
 # (c) 2021 by Knut Nergaard
 # Use, modify and distribute as desired.
