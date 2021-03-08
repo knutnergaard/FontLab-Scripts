@@ -67,12 +67,15 @@ for name, anchors in b['glyphsWithAnchors'].iteritems():
         b_dict[name] = anchors.keys()
 
 # Compare Bravura anchors to font anchors to get missing font anchors.
-print('Missing anchors:'),
-compare_anchors(b_dict, f_dict, 250)  # 250 = red
-print('\n' + '-' * 30 + '\n')
+if not f_dict[None]:
+    print('Missing anchors:'),
+    compare_anchors(b_dict, f_dict, 250)  # 250 = red
+    print('\n' + '-' * 30 + '\n')
 
-# Compare font anchors to Bravura anchors to get superfluous anchors.
-print('Superfluous anchors:'),
-compare_anchors(f_dict, b_dict, 250)  # 250 = red
-print('All done!')
+    # Compare font anchors to Bravura anchors to get superfluous anchors.
+    print('Superfluous anchors:'),
+    compare_anchors(f_dict, b_dict, 250)  # 250 = red
+    print('All done!')
+else:
+    print('This font does not contain anchors!')
 fl.UpdateFont()
