@@ -55,7 +55,7 @@ b_dict = {}
 # Build dicts of font anchors and conventional glyph names.
 for g in f.glyphs:
     name_dict[g.note] = g.name
-    f_dict[g.note] = [a.name]
+    f_dict[g.note] = []
     for a in g.anchors:
         if g.note in f_dict and a.name not in f_dict[g.note]:
             f_dict[g.note].append(a.name)
