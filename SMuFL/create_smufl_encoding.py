@@ -1,31 +1,29 @@
-'''
-Make FontLab SMuFL Encoding
+# Create SMuFL Encoding
 
-Version 1.0
+# Version 1.0
 
-Description:
-Generates FontLab encoding file (.enc) for the SMuFL PUA range,
-based on latest metadata release @ https://github.com/w3c/smufl.
+# Description:
+# Generates FontLab encoding file (.enc) for the SMuFL PUA range,
+# based on latest metadata release @ https://github.com/w3c/smufl.
 
-Naming Scheme:
-By default, glyph names are formatted uniXXXX (UV with 'uni' prefix),
-according to the AGL specification (https://github.com/adobe-type-tools/agl-specification).
+# Naming Scheme:
+# By default, glyph names are formatted uniXXXX (UV with 'uni' prefix),
+# according to the AGL specification (https://github.com/adobe-type-tools/agl-specification).
 
-If you prefer to encode SMuFLs descriptive glyph names, comment/uncomment lines 93/94.
+# If you prefer to encode SMuFLs descriptive glyph names, comment/uncomment lines 93/94.
 
-Beware:
-Please be sure to specify unique encoding vector index under Settings below
-when using several encoding versions at the same time.
+# Beware:
+# Please be sure to specify unique encoding vector index under Settings below
+# when using several encoding versions at the same time.
 
-If chosen file path already exists, existing file will be overwritten.
+# If chosen file path already exists, existing file will be overwritten.
+# The script must be run using Python 3 in the command line.
 
-Please refer to the FontLab manual for more information about custom encoding tables.
+# Please refer to the FontLab manual for more information about custom encoding tables.
 
+# (c) 2021 by Knut Nergaard
+# Use, modify and distribute as desired.
 
-Credits:
-Knut Nergaard
-
-'''
 
 import os
 import json
