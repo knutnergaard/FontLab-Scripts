@@ -26,6 +26,9 @@ By default, glyph names are formatted uniXXXX (UV with 'uni' prefix), according 
 
 Please refer to the FontLab manual for more information about custom encoding tables.
 
+### create_smufl_encoding_2.py
+Same as above, except rewritten in Python 2, and thus, can be run from inside FontLab.
+
 ### pua_to_unicode_musical_symbols.py
 Generates composite glyphs in Unicode ranges 'Miscellaneous Symbols'and 'Musical Symbols' (UMS) from identical glyphs in the Private User Area (PUA) range of a SMuFL font. Any preexisting glyphs in the UMS ranges are automatically skipped.
 
