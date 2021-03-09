@@ -2,6 +2,13 @@
 Python scripts to aide the creation of SMuFL fonts using FontLab Studio 5 and later.
 
 ## Summary of available scripts
+### Build Accordion Registrations
+Builds composites from the combining rank and dot glyphs in SMuFLs Accordion ramge.
+
+The script assigns grid values to the bounding box of each combining rank glyph, and places dots accordingly. To ensure accurate placements, all glyphs must be registered according to SMuFL guidelines, with the bottom left corner at the origin point, and with zero - width side bearings. Setting for overshoot in round rank glyphs is provided.
+
+For any preexisting glyphs, name will be appended with '_001' and unicode will be set to None.
+
 ### check_anchors.py
 Compares font anchors to latest Bravura metadata file, published at the [Bravura repository](https://github.com/steinbergmedia/bravura) to find missing or superfluous glyph anchors according to the SMuFL standard. Script will print any findings and mark glyphs with discrepancies unless colour value is set to 0.
 
