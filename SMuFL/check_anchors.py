@@ -1,7 +1,7 @@
 #FLM Check Anchors
 # -*- coding: utf-8 -*-
 
-# Version 1.0
+# Version 1.1
 
 # Description:
 # Compares font anchors to latest Bravura metadata file (published at
@@ -30,15 +30,15 @@ def get_json(url):
     return data
 
 
-def compare_anchors(dict_a, dict_b, colour):
+def compare_anchors(dict_1, dict_2, colour):
     '''compares font vs. metadata anchors, and marks glyphs with discrepancies'''
     seen = set()
-    for name, anchors in dict_a.iteritems():
-        if name in dict_b:
+    for name, anchors in dict_1.iteritems():
+        # Get conventional glyph names.
+        aglname = name_dict[name]
+        if name in dict_2:
             for anchor in anchors:
-                if anchor not in dict_b[name]:
-                    # Get conventional glyph names.
-                    aglname = name_dict[name]
+                if anchor not in dict_2[name]:
                     # Delete nested loop duplicates of name.
                     if aglname not in seen:
                         seen.add(aglname)
@@ -46,6 +46,12 @@ def compare_anchors(dict_a, dict_b, colour):
                             g.mark = colour
                         print('\n{} / {}:'.format(aglname, name))
                     print(anchor)
+        # Handle anchors in font specific glyphs.
+        elif dict_1 == f_dict and len(anchors) > 0:
+            if colour > 0:
+                g.mark = colour
+            print('\n{} / {}:'.format(aglname, name))
+            print('Glyph not in metadata "glyphsWithAnchors".')
 
 
 # Get raw data.
