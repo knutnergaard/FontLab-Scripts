@@ -2,7 +2,7 @@
 Python scripts to aide the creation of SMuFL fonts using FontLab Studio 5 and later.
 
 ## Summary of available scripts
-### Build Accordion Registrations
+### build_accordion_registrations.py
 Builds composites from the combining rank and dot glyphs in SMuFLs Accordion ramge.
 
 The script assigns grid values to the bounding box of each combining rank glyph, and places dots accordingly. To ensure accurate placements, all glyphs must be registered according to SMuFL guidelines, with the bottom left corner at the origin point, and with zero - width side bearings. Setting for overshoot in round rank glyphs is provided.
