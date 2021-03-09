@@ -1,6 +1,6 @@
 #FLM: Build Accordion Registrations
 
-# Version 0.1
+# Version 1.0
 
 # Description:
 # Builds composites from the combining rank and dot glyphs in SMuFLs Accordion ramge.
