@@ -18,7 +18,7 @@ Script will skip glyphs not containing descriptive SMuFL names as notes or glyph
 Renames glyphs with AGLFN names (uniXXXX) to descriptive SMuFL names by copying the annotations made by **set_smufl_names.py** or [annotate_glyphs_with_smufl_names](https://github.com/w3c/smufl/blob/gh-pages/scripts/fontlab/annotate_glyphs_with_smufl_names.py), available at the [SMuFL repository](https://github.com/w3c/smufl).
 
 ### create_smufl_encoding.py
-Generates FontLab encoding file (.enc) for the SMuFL PUA range based on the latest metadata release at the [SMuFL repository](https://github.com/w3c/smufl).
+Generates FontLab encoding file (.enc) for the SMuFL PUA range based on the latest metadata release at the SMuFL repository.
 
 By default, glyph names are formatted uniXXXX (UV with 'uni' prefix), according to the [AGL specification](https://github.com/adobe-type-tools/agl-specification), but encoding of descriptive SMuFLs glyph names is optional.
 
@@ -37,9 +37,9 @@ Version 1.0 does not generate glyphs in the *Medieval and Renaissance*, *Daseian
 **Beware:** Script will decompose any components in the reference glyphs before generating new glyphs.
 
 ### set_smufl_names.py
-his script retrieves discriptive SMuFL names from the latest published glyphnames.json metadata file published at the [SMuFL repository](https://github.com/w3c/smufl), and adds them to the Note field of the glyphs at the corresponding codepoint.
+his script retrieves discriptive SMuFL names from the latest published glyphnames.json metadata file published at the SMuFL repository, and adds them to the Note field of the glyphs at the corresponding codepoint.
 
-**Note:** This is a modified version of Ben Timms's script [annotate_glyphs_with_smufl_names](https://github.com/w3c/smufl/blob/gh-pages/scripts/fontlab/annotate_glyphs_with_smufl_names.py).
+**Note:** This is a modified version of Ben Timms's script **annotate_glyphs_with_smufl_names**, available at the SMuFL repository.
 
 ### smufl_to_finale.py
 Generates composite glyphs from the SMuFL PUA range in codepoints compatible with Finale's Maestro font for Mac & Windows, and alters
