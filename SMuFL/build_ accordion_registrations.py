@@ -129,7 +129,7 @@ for target, values in gen_dict.iteritems():
         x, y = source_bbox_wdth / 2, source_bbox_hght / 2
         if value == 'stop4':
             y = source_bbox_hght / 1.219  # stop4 = top of round rank 3 (780/640)
-        elif value == 'upper8' or value == 'master':
+        elif value in ('upper8', 'master'):
             x = source_bbox_wdth / 1.3  # upper8/master = mid right of round rank 2/3/4 (780/600)
         elif value == 'lower8':
             x = source_bbox_wdth / 4.333  # lower8 = mid left of round rank 3 (780/180)
@@ -147,7 +147,7 @@ for target, values in gen_dict.iteritems():
             y = source_bbox_hght / 1.352  # stop8_2 = top of rank 2 (780/577)
         elif value == 'stop16_2':
             y = source_bbox_hght / 3.842  # stop16_2 = bottom of rank 2 (780/203)
-        elif value == 'stop8_3' or value == 'left8stop' or value == 'right8stop':
+        elif value in ('stop8_3', 'left8stop', 'right8stop'):
             y = source_bbox_hght / 5.555  # stop8_3 = bottom of square rank 3 (750/135)
         elif value == 'stop2':
             y = source_bbox_hght / 1.22  # stop2 = top of square rank 3 (750/615)
@@ -163,9 +163,9 @@ for target, values in gen_dict.iteritems():
         if source != 'uniE8C9':
             y += overshoot
 
+        components.append(Component(d_indx, Point(x, y)))
         if i == 0:
             components.append(Component(s_indx, Point(0, 0)))
-        components.append(Component(d_indx, Point(x, y)))
 
     for item in components:
         metrics = source_glyph.GetMetrics()
