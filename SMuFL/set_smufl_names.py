@@ -28,12 +28,13 @@ def get_json(url):
 
 
 def set_glyph_note_to_smufl_name(glyph):
-    for codepoint in glyph.unicodes:
-        if codepoint in glyphnames_for_codepoint:
-            print 'Setting Note for codepoint {} to "{}".'.format(hex(codepoint), glyphnames_for_codepoint[codepoint])
-            glyph.note = str(glyphnames_for_codepoint[codepoint])
-        return
-    print 'Unable to lookup SMuFL name for glyph {}.'.format(glyph.name)
+    if glyph.unicode:
+        for codepoint in glyph.unicodes:
+            if codepoint in glyphnames_for_codepoint:
+                print 'Setting Note for codepoint {} to "{}".'.format(hex(codepoint), glyphnames_for_codepoint[codepoint])
+                glyph.note = str(glyphnames_for_codepoint[codepoint])
+            return
+        print 'Unable to lookup SMuFL name for glyph {}.'.format(glyph.name)
 
 
 if fl.font is None:
