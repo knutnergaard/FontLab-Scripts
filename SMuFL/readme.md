@@ -13,6 +13,13 @@ For any preexisting glyphs, name will be appended with '_001' and unicode will b
 Compares font anchors to latest Bravura metadata file, published at the [Bravura repository](https://github.com/steinbergmedia/bravura) to find missing or superfluous glyph anchors according to the SMuFL standard. Script will print any findings and mark glyphs with discrepancies unless colour value is set to 0.
 
 Script will skip glyphs not containing descriptive SMuFL names as notes or glyph names.
+### clean_smufl_font.py ###
+
+Deletes any unencoded glyphs and glyphs without a valid SMuFL codepoint, i.e., outside the unicode ranges Private User Area (U+E000-U+F8FF), Musical Symbols (U+1D100-U+1D1FF) and the Musical Symbols part of Miscellaneous Symbols (u+2669-u+266F). 
+
+Further exclusions can be added to included list of glyph names, which by default contains glyphs *.notdef* and *space*.
+
+**Beware:** This script permanently deletes glyphs, and could, in the event of any software bugs or system flaws, result in unintended data loss. **Use at your own risk!**
 
 ### copy_notes_to_glyph_names.py
 Renames glyphs with AGLFN names (uniXXXX) to descriptive SMuFL names by copying the annotations made by **set_smufl_names.py** or [annotate_glyphs_with_smufl_names](https://github.com/w3c/smufl/blob/gh-pages/scripts/fontlab/annotate_glyphs_with_smufl_names.py), available at the [SMuFL repository](https://github.com/w3c/smufl).
@@ -30,7 +37,7 @@ Please refer to the FontLab manual for more information about custom encoding ta
 Same as above, except rewritten in Python 2, and thus, can be run from inside FontLab.
 
 ### pua_to_unicode_musical_symbols.py
-Generates composite glyphs in Unicode ranges 'Miscellaneous Symbols'and 'Musical Symbols' (UMS) from identical glyphs in the Private User Area (PUA) range of a SMuFL font. Any preexisting glyphs in the UMS ranges are automatically skipped.
+Generates composite glyphs in Unicode ranges Miscellaneous Symbols and Musical Symbols from identical glyphs in the Private User Area range of a SMuFL font. Any preexisting glyphs in the target ranges are automatically skipped.
 
 Version 1.0 does not generate glyphs in the *Medieval and Renaissance*, *Daseian notation* or *Chord diagrams* ranges.
 
