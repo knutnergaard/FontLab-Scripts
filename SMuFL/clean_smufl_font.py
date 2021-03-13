@@ -1,4 +1,4 @@
-# FLM Clean SMuFL Font
+#FLM Clean SMuFL Font
 
 # Description:
 # Deletes any unencoded glyphs and glyphs without a valid SMuFL codepoint, i.e., outside
@@ -22,10 +22,11 @@ excluded_glyphs = ['.notdef', 'space', ]
 
 f = fl.font
 
-private_use = range(57344, 63743)
-mus_symbols = range(119040, 119295)
-misc_symbols = range(9833, 9839)
+private_use = range(57344, 63744)
+mus_symbols = range(119040, 119296)
+misc_symbols = range(9833, 9840)
 
+print('Starting ...')
 # Do two backwards passes over all glyphs in font to prevent break.
 for _ in range(2):
     for i in range(len(f.glyphs) - 1, -1, -1):
@@ -35,7 +36,7 @@ for _ in range(2):
         # Delete everything but:
         if (g_indx > -1 and g.unicode not in private_use and g.unicode not in mus_symbols and
                 g.unicode not in misc_symbols and g.name not in excluded_glyphs):
-            print('deleting: {}'.format(g.name))
+            print('Deleting: {}'.format(g.name))
             del fl.font.glyphs[g_indx]
-
+print('All done!')
 fl.UpdateFont(fl.ifont)
