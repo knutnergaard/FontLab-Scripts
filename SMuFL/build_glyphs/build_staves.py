@@ -1,12 +1,15 @@
-#FLM: Build Staves
+# FLM: Build Staves
+# pylint: disable=invalid-name
 
-# Version 0.1
+# Version 0.2
 
 # Description:
-# Builds composite glyphs in SMuFLs Staves range from single staff line glyphs.
+# Builds composite glyphs in SMuFLs Staves range from single staff line glyphs. Script will draw
+# primitives in place of non-existent source glyphs, according to engraving default settings below.
 
 # Note:
 # For any preexisting glyphs, name will be appended with '_001' and unicode will be set to None.
+# Any preexisting components in the source glyphs will be decomposed.
 
 # (c) 2021 by Knut Nergaard
 # Use, modify and distribute as desired.
@@ -14,82 +17,163 @@
 
 from FL import *
 
-gen_list = {
+# Engraving default settings in staff spaces:
+engraving_defaults = {'legerLineExtension': 0.3,
+                      'legerLineThickness': 0.16,
+                      'staffLineThickness': 0.13}
+
+
+# Advance width settings for leger lines in staff spaces:
+leger_wdths = {'uniE022': 1.328,  # legerLine
+               'uniE023': 2.128,  # legerLineWide
+               'uniE024': 0.528}  # legerLineNarrow
+
+
+# Glyphs to generate:
+gen_dict = {
     # source : (target_1,  target_2,  target_3,  target_4,  target_5)
     'uniE010': ('uniE011', 'uniE012', 'uniE013', 'uniE014', 'uniE015'),  # staffLine
     'uniE016': ('uniE017', 'uniE018', 'uniE019', 'uniE01A', 'uniE01B'),  # staffLineWide
-    'uniE01C': ('uniE01D', 'uniE01E', 'uniE01F', 'uniE020', 'uniE021')}  # staffLineNarrow
+    'uniE01C': ('uniE01D', 'uniE01E', 'uniE01F', 'uniE020', 'uniE021'),  # staffLineNarrow
+    'uniE022': None,  # legerLine
+    'uniE023': None,  # legerLineWide
+    'uniE024': None   # legerLineNarrow
+}
+
+mark_colour = 120  # 0 = None
 
 
-f = fl.font
+def draw_primitive(glyph, pt, lngth, hght):
+    ''' Draws primitive of assigned length and width. '''
+    node = Node(17, Point(pt.x, pt.y + hght))  # 17 = Move
+    node.alignment = 0  # 0 = Sharp
+    glyph.Add(node)
+
+    node.type = 1  # 1 = Line
+    node.points = [Point(pt.x, pt.y - hght)]
+    glyph.Add(node)
+
+    node.points = [Point(pt.x + lngth, pt.y - hght)]
+    glyph.Add(node)
+
+    node.points = [Point(pt.x + lngth, pt.y + hght)]
+    glyph.Add(node)
 
 
-def make_offsets(start, end, inc):
-    ''' Generates y offset values for components based on baseline,
-        staff hight and staff space values. '''
+def decompose_components(glyph_name):
+    ''' Decomposes preexisting components in source glyphs. '''
+    for g in f.glyphs:
+        comp_num = len(g.components)
+        if g.name == glyph_name and comp_num > 0:
+            g.Decompose()
+            print('Decomposing: ' + g.name)
+
+
+def check_sources(glyph_name):
+    ''' Checks for missing source glyphs, draws if non-existent, according to
+        type and above settings and append glyphs to font. '''
+    if not f.has_key(glyph_name):
+        print(glyph_name + ' is missing')
+        glyph = Glyph()
+        glyph.name = glyph_name
+        glyph.unicode = int(glyph_name[3:], 16)
+        glyph.mark = mark_colour
+
+        # Define parameters for staff lines.
+        x, y = 0, space * 2
+        wdth = space * 2
+        thk = engraving_defaults['staffLineThickness'] * space / 2
+        if glyph_name == 'uniE016':
+            wdth = space * 3
+        elif glyph_name == 'uniE01C':
+            wdth = space
+        metrics = Point(wdth, 0)
+
+        # Define parameters for leger lines.
+        if gen_dict[glyph_name] is None:
+            x = -engraving_defaults['legerLineExtension'] * space
+            y = 0
+            ext = engraving_defaults['legerLineExtension'] * 2
+            thk = engraving_defaults['legerLineThickness'] * space / 2
+            if glyph_name == 'uniE022':
+                wdth = (leger_wdths['uniE022'] + ext) * space
+            elif glyph_name == 'uniE023':
+                wdth = (leger_wdths['uniE023'] + ext) * space
+            else:
+                wdth = (leger_wdths['uniE024'] + ext) * space
+            neg_sb = wdth - ext * space
+            metrics = Point(neg_sb, 0)
+
+        # Draw glyphs, set metrics and append to font.
+        reg = Point(x, y)
+        print('Drawing: ' + glyph_name)
+        draw_primitive(glyph, reg, wdth, thk)
+        glyph.SetMetrics(metrics)
+        f.glyphs.append(glyph)
+
+
+def make_shifts(start, end, inc):
+    ''' Generates delta shift values for components. '''
     current = start
     while current < end:
         yield current
         current += inc
 
 
-def check_sources(glyph):
-    ''' Checks for missing source glyphs and decomposes any precsisting components. '''
-    if not f.has_key(glyph):
-        print glyph + ' is missing'
-    for g in f.glyphs:
-        comp_num = len(g.components)
-        if g.name == glyph and comp_num > 0:
-            g.Decompose()
-            print 'Decomposing: ' + g.name
+# Program:
+f = fl.font
+space = fl.font.upm / 4
+print('Starting ...')
 
-
-print 'Creating new glyphs ...'
-for source, targets in gen_list.iteritems():
+for source, targets in gen_dict.iteritems():
+    # Prepare source glyphs.
     check_sources(source)
-    for target in targets:
-        # Finds source glyph.
-        g_indx = f.FindGlyph(source)
-        source_glyph = f.glyphs[g_indx]
+    decompose_components(source)
 
-        # Changes name and unicode of any preexisting glyph.
-        if f.has_key(target):
-            s_indx = f.FindGlyph(target)
-            old_glyph = f.glyphs[s_indx]
-            old_glyph.name = old_glyph.name + '_001'
-            old_glyph.unicode = 0
+    if targets is not None:
+        for target in targets:
+            # Get index of source.
+            g_indx = f.FindGlyph(source)
+            source_glyph = f.glyphs[g_indx]
 
-        # Sets parameters for new glyphs.
-        new_glyph = Glyph()
-        new_glyph.name = target
-        new_glyph.unicode = int(target[3:], 16)
-        new_glyph.mark = 120  # Sets your favorite mark colour.
+            # Change name and unicode of any preexisting glyph.
+            if f.has_key(target):
+                s_indx = f.FindGlyph(target)
+                old_glyph = f.glyphs[s_indx]
+                old_glyph.name = old_glyph.name + '_001'
+                old_glyph.unicode = 0
 
-        # Determines base offset values for components
-        # in glyphs with odd/even number of copies.
-        space = fl.font.upm / 4
-        line_num = targets.index(target) + 2
-        if line_num % 2 == 0:
-            baseline = space / 2
-        else:
-            baseline = 0
-        glyph_height = space * line_num / 2
+            # Set parameters for new glyphs.
+            new_glyph = Glyph()
+            new_glyph.name = target
+            new_glyph.unicode = int(target[3:], 16)
+            new_glyph.mark = mark_colour  # Sets your favorite mark colour.
 
-        # Generates offset values for staff lines.
-        offsets = make_offsets(baseline, glyph_height, space)
-        # Appends components with + and - offset values.
-        for offset in offsets:
-            if offset > 0:
-                new_glyph.components.append(Component(g_indx, Point(0, offset)))
-            new_glyph.components.append(Component(g_indx, Point(0, -offset)))
+            # Determine base y values for initial components
+            # in glyphs with odd/even number of lines.
+            line_num = targets.index(target) + 2
+            if line_num % 2 == 0:
+                baseline = space / 2
+            else:
+                baseline = 0
+            glyph_height = space * line_num / 2
 
-        # Copies and sets metrics.
-        metrics = source_glyph.GetMetrics()
-        new_glyph.SetMetrics(metrics)
+            # Generate shift values for subsequent components.
+            shifts = make_shifts(baseline, glyph_height, space)
 
-        # Appends new glyphs to font.
-        f.glyphs.append(new_glyph)
-        print('Appending: ' + new_glyph.name)
+            # Append with + and - shift values.
+            for shift in shifts:
+                if shift > 0:
+                    new_glyph.components.append(Component(g_indx, Point(0, shift)))
+                new_glyph.components.append(Component(g_indx, Point(0, -shift)))
+
+            # Get/set metrics for composite glyphs.
+            metrics = source_glyph.GetMetrics()
+            new_glyph.SetMetrics(metrics)
+
+            # Append new glyphs to font.
+            f.glyphs.append(new_glyph)
+            print('Appending: ' + new_glyph.name)
 
 
 fl.UpdateFont(fl.ifont)
