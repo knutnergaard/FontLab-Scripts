@@ -16,5 +16,7 @@ Builds composite glyphs in SMuFLs Barlines range from single barline glyphs.
 For any preexisting glyphs, name will be appended with '_001' and unicode will be set to None.
 
 ### build_staves.py
-Builds composite glyphs in SMuFLs Staves range from single staff line glyphs.
+Builds composite glyphs in SMuFLs Staves range from single staff line glyphs. Script will draw
+primitives in place of non-existent source glyphs, according to engraving default settings below.
+
 For any preexisting glyphs, name will be appended with '_001' and unicode will be set to None.
