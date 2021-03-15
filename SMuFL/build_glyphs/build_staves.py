@@ -30,7 +30,7 @@ leger_wdths = {'uniE022': 1.328,  # legerLine
 
 
 # Glyphs to generate:
-gen_dict = {
+staves = {
     # source : (target_1,  target_2,  target_3,  target_4,  target_5)
     'uniE010': ('uniE011', 'uniE012', 'uniE013', 'uniE014', 'uniE015'),  # staffLine
     'uniE016': ('uniE017', 'uniE018', 'uniE019', 'uniE01A', 'uniE01B'),  # staffLineWide
@@ -73,7 +73,7 @@ def check_sources(glyph_name):
     ''' Checks for missing source glyphs, draws if non-existent, according to
         type and above settings and append glyphs to font. '''
     if not f.has_key(glyph_name):
-        print(glyph_name + ' is missing')
+        print('\nSource glyph {} is missing!'.format(glyph_name))
         glyph = Glyph()
         glyph.name = glyph_name
         glyph.unicode = int(glyph_name[3:], 16)
@@ -90,7 +90,7 @@ def check_sources(glyph_name):
         metrics = Point(wdth, 0)
 
         # Define parameters for leger lines.
-        if gen_dict[glyph_name] is None:
+        if staves[glyph_name] is None:
             x = -engraving_defaults['legerLineExtension'] * space
             y = 0
             ext = engraving_defaults['legerLineExtension'] * 2
@@ -106,7 +106,7 @@ def check_sources(glyph_name):
 
         # Draw glyphs, set metrics and append to font.
         reg = Point(x, y)
-        print('Drawing: ' + glyph_name)
+        print('Adding glyph')
         draw_primitive(glyph, reg, wdth, thk)
         glyph.SetMetrics(metrics)
         f.glyphs.append(glyph)
@@ -125,7 +125,7 @@ f = fl.font
 space = fl.font.upm / 4
 print('Starting ...')
 
-for source, targets in gen_dict.iteritems():
+for source, targets in staves.iteritems():
     # Prepare source glyphs.
     check_sources(source)
     decompose_components(source)
@@ -173,8 +173,8 @@ for source, targets in gen_dict.iteritems():
 
             # Append new glyphs to font.
             f.glyphs.append(new_glyph)
-            print('Appending: ' + new_glyph.name)
+            print('Appending composite glyph {}'.format(new_glyph.name))
 
 
 fl.UpdateFont(fl.ifont)
-print('All done!')
+print('\nAll done!')
