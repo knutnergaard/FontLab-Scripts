@@ -34,8 +34,13 @@ Generates composite glyphs in Unicode ranges Miscellaneous Symbols and Musical S
 
 **Beware:** Script will decompose any components in the reference glyphs before generating new glyphs.
 
+### set_optional_descriptions.py
+Retrieves glyph descriptions for optional glyphs from the latest bravura metadata JSON file published at the Bravura repository, and appends them to the Note field of glyphs at the corresponding codepoints, along with the value separator of your choice.
+
+**Note:** This script is intended as preparation for metadata file generation, and should be run AFTER setting the descriptive smufl_names. The chosen value separator (carriage return (\r) by default) should be the same as in the metadata generator.
+
 ### set_smufl_names.py
-his script retrieves discriptive SMuFL names from the latest published glyphnames.json metadata file published at the SMuFL repository, and adds them to the Note field of the glyphs at the corresponding codepoint.
+Retrieves discriptive SMuFL names from the latest published glyphnames.json metadata file published at the SMuFL repository, and adds them to the Note field of the glyphs at the corresponding codepoint.
 
 **Note:** This is a modified version of Ben Timms's script **annotate_glyphs_with_smufl_names**, available at the SMuFL repository.
 
