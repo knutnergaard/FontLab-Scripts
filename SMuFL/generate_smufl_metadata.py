@@ -13,6 +13,7 @@
 # - glyphs with anchors
 # - ligatures
 # - optional glyphs
+# - sets
 
 # Note:
 # This script requires all glyphs to be named according to SMuFL guidelines, with recommended
