@@ -275,6 +275,8 @@ for g in f.glyphs:
                 FONT_METADATA["ligatures"][smufl_name]["componentGlyphs"] = component_notes
 
         # Set optional glyphs.
+        FONT_METADATA["optionalGlyphs"][smufl_name] = {"classes": []}
+        FONT_METADATA["optionalGlyphs"][smufl_name]["codepoint"] = format_codepoint(g.unicode)
         if g.name.endswith(('.salt', '.ss'), 7, -2):
             alt_name = g.name[:7]
             smufl_alt = note_for_name(alt_name)
@@ -283,10 +285,7 @@ for g in f.glyphs:
                 FONT_METADATA["optionalGlyphs"][smufl_name]["classes"] = []
                 for value in class_dict[smufl_alt]:
                     FONT_METADATA["optionalGlyphs"][smufl_name]["classes"].append(value)
-            else:
-                FONT_METADATA["optionalGlyphs"][smufl_name] = {"classes": []}
-            FONT_METADATA["optionalGlyphs"][smufl_name]["codepoint"] = format_codepoint(g.unicode)
-
+                
         # Set sets.
         if g.name.endswith('.ss', 7, -2):
             FONT_METADATA["sets"] = SET_INFO
