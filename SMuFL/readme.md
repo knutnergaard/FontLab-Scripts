@@ -29,6 +29,13 @@ By default, glyph names are formatted uniXXXX (UV with 'uni' prefix), according 
 ### create_smufl_encoding_2.py
 Same as above, except rewritten in Python 2, and thus, can be run from inside FontLab.
 
+### generate_smufl_metadata.py
+Full-featured metadata generator for SMuFL fonts, built upon Ben Timms's original script, available at the SMuFL repository. Features include: engraving defaults, glyph advanced widths, glyph bounding boxes, glyphs with alternates, glyphs with anchors, ligatures, optional glyphs and sets.
+
+**Note:** This script requires all glyphs to be named according to SMuFL guidelines, with recommended characters adopting the 'uni' + Unicode value scheme. Ligatures, stylistic alternates and sets should follow the descriptive scheme, with ligature names comprised of component names, separated by underscore ('_'), and alternates and stylistic adopting the names of their recommended counterparts, suffixed by .salt and .ss (plus index number) respectively. 
+
+Full support for glyph descriptions in optional glyphs and sets require additional string, separated from descriptive name by an optional character, in the Note fields of appropriate glyphs. As a starting point, Bravura's glyph descriptions can be imported using set_optional_escriptions.py. String must be set manually for any unique glyphs. 
+
 ### pua_to_unicode_musical_symbols.py
 Generates composite glyphs in Unicode ranges Miscellaneous Symbols and Musical Symbols from identical glyphs in the Private User Area range of a SMuFL font. Any preexisting glyphs in the target ranges are automatically skipped. Version 1.0 does not generate glyphs in the *Medieval and Renaissance*, *Daseian notation* or *Chord diagrams* ranges.
 
