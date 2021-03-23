@@ -20,3 +20,10 @@ Builds composite glyphs in SMuFLs Staves range from single staff line glyphs. Sc
 primitives in place of non-existent source glyphs, according to engraving default settings below.
 
 For any preexisting glyphs, name will be appended with '_001' and unicode will be set to None.
+
+### build_time_signatures.py
+
+Builds composite glyphs in the Time Signatures, Time signatures supplement, Turned time signatures and Reversed time signatures ranges. 
+Current version supports fractions, cut time glyphs turned glyphs, reversed glyphs and ligatures. Support for stylistic sets is planned. 
+
+**Note:** Script requires the presence of basic Time signature numerals (U+E080 - U+E089), common time symbol (U+E08A) and fraction slash (U+E08E). Additionally, cut time symbols build requires a vertical stroke glyph to be used as component in those glyphs. See script for further instructions.
