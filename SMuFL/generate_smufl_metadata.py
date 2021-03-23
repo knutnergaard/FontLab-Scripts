@@ -50,7 +50,6 @@ OUTPUT_DIR = os.path.join(os.path.expanduser('~'), 'Desktop')
 VALUE_SEPARATOR = '\r'
 FILENAME = os.path.join(OUTPUT_DIR, '{}_metadata_{}.json'.format(f.font_name,
                                                                  strftime("%Y%m%d_%H%M%S", localtime())))
-# Striftime adds date and time file
 
 if f is None:
     raise Exception('Please open a font first!')
@@ -281,8 +280,6 @@ for g in f.glyphs:
             alt_name = g.name[:7]
             smufl_alt = note_for_name(alt_name)
             if smufl_alt in class_dict:
-                FONT_METADATA["optionalGlyphs"][smufl_name] = {}
-                FONT_METADATA["optionalGlyphs"][smufl_name]["classes"] = []
                 for value in class_dict[smufl_alt]:
                     FONT_METADATA["optionalGlyphs"][smufl_name]["classes"].append(value)
                 
