@@ -15,12 +15,12 @@
 # Support for stylistic sets is planned.
 
 # Note:
-# Script requires the presence of basic Time signature numerals (U+E080 - U+E089), cut time symbol
+# Script requires the presence of basic Time signature numerals (U+E080 - U+E089), common time symbol
 # (U+E08A) and fraction slash (U+E08E).
 
 # Additionally, cut time symbols build requires a vertical stroke glyph to be used as component in
-# those glyphs. This glyph does not need to be encoded, but must be named according to the variable
-# Stroke below, by default name is set to 'timeSigVerticalStroke'.
+# those glyphs. This does not need to be encoded, but must be named according to the variable
+# Stroke below. By default name is set to 'timeSigVerticalStroke'.
 
 
 # (c) 2021 by Knut Nergaard.
