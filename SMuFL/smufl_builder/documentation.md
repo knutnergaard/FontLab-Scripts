@@ -1,5 +1,5 @@
-#SMuFLbuilder
-##Documentation
+# SMuFLbuilder
+## Documentation
 
 SMuFLbuilder is a Python script for FontLab Studio 5 that lets you build composite glyphs across selected ranges in SMuFL fonts, based on created components.
 For glyphs involving primitives (like barlines, staves, stems, etc.), SMuFLbuilder will even draw the parent glyphs for you, based on your own specifications.
@@ -7,7 +7,7 @@ For glyphs involving primitives (like barlines, staves, stems, etc.), SMuFLbuild
 Considering the many component-based symbols used in music notation generally, as well as the numerous, partially or fully, visually identical glyphs found in the SMuFL standard, makes SMuFLbuilder a real timesaver for any creator of SMuFL fonts.
 
 ###License
-SMuFLbuilder is written and maintained by Knut Nergaard, and is available under the **[MIT License](https://github.com/knutnergaard/FontLab-Scripts/tree/main/SMuFL/SMuFLbuilder/Lisence.txt)**.<br/>
+SMuFLbuilder is written and maintained by Knut Nergaard, and is available under the **[MIT License](https://github.com/knutnergaard/FontLab-Scripts/blob/main/SMuFL/smufl_builder/license.txt)**.
 Copyright © by Knut Nergaard 2021.
 
 ###Supported ranges
@@ -24,11 +24,10 @@ The current beta version (0.1) supports the following ranges (including recommen
 - Flags (U+E240-U+E25F)
 - Accordion (U+E8A0-U+E8DF)
 - Time signatures supplement (U+EC80-U+EC8F)
-- Octaves supplement (U+EC90-U+EC9F)
 - Turned time signatures (U+ECE0-U+ECEF)
 - Reversed time signatures (U+ECF0-U+ECFF)
 
-###Installation
+### Installation
 Install SMuFLbuilder manually as follows:
 
 **On Mac:**
@@ -43,7 +42,7 @@ Install SMuFLbuilder manually as follows:
 The installation process on Windows is exactly the same as above, except that the filepaths will be different. You will also need to change the filepath for the default settings in filepaths.py to reflect the Windows syntax.
 An installer is planned to make this easier.
 
-###Running the script
+### Running the script
 SMuFLbuilder is most simply from the Macros panel in FontLab Studio. Assuming **Python 2.7** is correctly installed on your system,
 
 - Select Wiew > Toolbars > Macro in the application menu to show the Macro Toolbar.
@@ -51,7 +50,7 @@ SMuFLbuilder is most simply from the Macros panel in FontLab Studio. Assuming **
 - Press the triangular 'play' button to run the script.
 - Refer to the chapter *Macro Programming* in the FontLab Studio Manual for more detailed instructions.
 
-###Settings
+### Settings
 All user-specific options and settings for SMuFLbuilder are defined in `smuflbuilder_settings.ini`, which can be edited in any basic text editor.
 Default settings are defined in a separate file named `defaults.ini`, located in the FontLab Modules folder.
 
@@ -120,7 +119,7 @@ At present, there is no way to specify this on an option-by-option basis.
 
 The following sections are dedicated to specific ranges and font elements. A more thorough description of these is planned for a future installment of this documentation. Until then, their names should hopefully be self-explanatory enough to anyone with a general knowledge of music engraving and font creation and a familiarity with SMuFL more specifically.
 
-###Required and Created Glyphs
+### Required and Created Glyphs
 
 A full overview of glyphs required for full support is in the works.
 For the time being, here's a list of all the ranges and glyphs SMuFLbuilder will create for you:
@@ -191,6 +190,6 @@ U+E220 | *tremolo1*, U+E225 | *tremoloFingered1*, U+E4A2 |
 U+ECE0 | *timeSig0Turned*, U+ECE1 | *timeSig1Turned*, U+ECE2 | *timeSig2Turned*, U+ECE3 | *timeSig3Turned*, U+ECE4 | *timeSig4Turned*, U+ECE5 | *timeSig5Turned*, U+ECE6 | *timeSig6Turned*, U+ECE7 | *timeSig7Turned*, U+ECE8 | *timeSig8Turned*, U+ECE9 | *timeSig9Turned*, U+ECEA | *timeSigCommonTurned*, U+ECEB | *timeSigCutCommonTurned*
 
 
-Please experiment, enjoy and be sure to let me know if anything doesn't work or can be improved!
+Please experiment, enjoy and be sure to let me know if anything doesn't work or needs improvement!
 
 Knut
