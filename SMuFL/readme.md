@@ -2,9 +2,6 @@
 Python scripts to aide the creation of SMuFL fonts using FontLab Studio 5 and later.
 
 ## Summary of available scripts
-### build_glyphs
-Scripts to build composite glyphs from basic and combined SMuFL glyphs.
-See dedicated readme file.
 
 ### check_anchors.py
 Compares font anchors to latest Bravura metadata file, published at the [Bravura repository](https://github.com/steinbergmedia/bravura) to find missing or superfluous glyph anchors according to the SMuFL standard. Script will print any findings and mark glyphs with discrepancies unless colour value is set to 0.
@@ -45,6 +42,11 @@ Generates composite glyphs in Unicode ranges Miscellaneous Symbols and Musical S
 Retrieves glyph descriptions for optional glyphs from the latest bravura metadata JSON file published at the Bravura repository, and appends them to the Note field of glyphs at the corresponding codepoints, along with the value separator of your choice.
 
 **Note:** This script is intended as preparation for metadata file generation, and should be run AFTER setting the descriptive smufl_names. The chosen value separator (carriage return (\r) by default) should be the same as in the metadata generator.
+
+### smufl_builder
+Python module for FontLab to build composites and draw rudimentary glyphs accross the scope of SMuFL.
+See dedicated readme file for more information.
+
 
 ### set_smufl_names.py
 Retrieves discriptive SMuFL names from the latest published glyphnames.json metadata file published at the SMuFL repository, and adds them to the Note field of the glyphs at the corresponding codepoint.
