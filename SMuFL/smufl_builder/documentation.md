@@ -6,11 +6,11 @@ For glyphs involving primitives (like barlines, staves, stems, etc.), SMuFLbuild
 
 Considering the many component-based symbols used in music notation generally, as well as the numerous, partially or fully, visually identical glyphs found in the SMuFL standard, makes SMuFLbuilder a real timesaver for any creator of SMuFL fonts.
 
-###License
+### License
 SMuFLbuilder is written and maintained by Knut Nergaard, and is available under the **[MIT License](https://github.com/knutnergaard/FontLab-Scripts/blob/main/SMuFL/smufl_builder/license.txt)**.
 Copyright © by Knut Nergaard 2021.
 
-###Supported ranges
+### Supported ranges
 The current beta version (0.1) supports the following ranges (including recommended alternates and ligatures where applicable):
 
 - Staves (U+E010-U+E02F)
