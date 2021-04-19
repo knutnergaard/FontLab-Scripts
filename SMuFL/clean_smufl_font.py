@@ -1,4 +1,4 @@
-#FLM Clean SMuFL Font
+#FLM: Clean SMuFL Font
 
 # Description:
 # Deletes any unencoded glyphs and glyphs without a valid SMuFL codepoint, i.e., outside
