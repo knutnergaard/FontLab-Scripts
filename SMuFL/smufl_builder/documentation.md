@@ -4,7 +4,7 @@
 SMuFLbuilder is a Python script for FontLab Studio 5 that lets you build composite glyphs across selected ranges in SMuFL fonts, based on created components.
 For glyphs involving primitives (like barlines, staves, stems, etc.), SMuFLbuilder will even draw the parent glyphs for you, based on your own specifications.
 
-Considering the many component-based symbols used in music notation generally, as well as the numerous, partially or fully, visually identical glyphs found in the SMuFL standard, makes SMuFLbuilder a real timesaver for any creator of SMuFL fonts.
+Considering the many component-based symbols used in music notation generally, as well as the numerous, partially or fully, visually identical glyphs found in the SMuFL standard, SMuFLbuilder can be a real timesaver for any creator of SMuFL fonts.
 
 ### License
 SMuFLbuilder is written and maintained by Knut Nergaard, and is available under the **[MIT License](https://github.com/knutnergaard/FontLab-Scripts/blob/main/SMuFL/smufl_builder/license.txt)**.
