@@ -1,4 +1,4 @@
-#FLM:Set Optional Descriptions
+#FLM: Set Optional Descriptions
 
 # Description:
 # Retrieves glyph descriptions for optional glyphs from the latest bravura metadata JSON file
