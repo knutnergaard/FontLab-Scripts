@@ -1,4 +1,4 @@
-#FLM:Generate SMuFL Metadata
+#FLM: Generate SMuFL Metadata
 
 # Version 1.0
 
