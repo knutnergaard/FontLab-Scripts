@@ -136,14 +136,14 @@ All
 All
 
 **Time signatures (U+E080-U+E09F)** </br>
- U+E08B | *timeSigCutCommon* | U+E097 | *timeSigFractionQuarter*, U+E098 | *timeSigFractionHalf*, U+E099 | *timeSigFractionThreeQuarters*, U+E09A | *timeSigFractionOneThird*, U+E09B | *timeSigFractionTwoThirds*
+ U+E08B | *timeSigCutCommon* | U+E097 | *timeSigFractionQuarter*, U+E098 | *timeSigFractionHalf*, U+E099 | *timeSigFractionThreeQuarters*, U+E09A | *timeSigFractionOneThird*, U+E09B | *timeSigFractionTwoThirds*
 \+ All Ligatures
 
 **Individual notes (U+E1D0-U+E1EF)** </br>
- U+E1D9 | *note16thUp*, U+E1D8 | *note8thDown*, U+E1D3 | *noteHalfUp*, U+E1D2 | *noteWhole*, U+E1D1 | *noteDoubleWholeSquare*, U+E1D0 | *noteDoubleWhole*, U+E1D7 | *note8thUp*, U+E1D6 | *noteQuarterDown*, U+E1D5 | *noteQuarterUp*, U+E1D4 | *noteHalfDown*, U+E1E0 | *note128thDown*, U+E1E1 | *note256thUp*, U+E1E2 | *note256thDown*, U+E1E3 | *note512thUp*, U+E1E4 | *note512thDown*, U+E1E5 | *note1024thUp*, U+E1E6 | *note1024thDown*, None | *None*, U+E1DC | *note32ndDown*, U+E1DB | *note32ndUp*, U+E1DA | *note16thDown*, U+E1DF | *note128thUp*, U+E1DE | *note64thDown*, U+E1DD | *note64thUp*
+ U+E1D9 | *note16thUp*, U+E1D8 | *note8thDown*, U+E1D3 | *noteHalfUp*, U+E1D2 | *noteWhole*, U+E1D1 | *noteDoubleWholeSquare*, U+E1D0 | *noteDoubleWhole*, U+E1D7 | *note8thUp*, U+E1D6 | *noteQuarterDown*, U+E1D5 | *noteQuarterUp*, U+E1D4 | *noteHalfDown*, U+E1E0 | *note128thDown*, U+E1E1 | *note256thUp*, U+E1E2 | *note256thDown*, U+E1E3 | *note512thUp*, U+E1E4 | *note512thDown*, U+E1E5 | *note1024thUp*, U+E1E6 | *note1024thDown*, None | *None*, U+E1DC | *note32ndDown*, U+E1DB | *note32ndUp*, U+E1DA | *note16thDown*, U+E1DF | *note128thUp*, U+E1DE | *note64thDown*, U+E1DD | *note64thUp*
 
 **Beamed groups of notes (U+E1F0-U+E20F)** </br>
- U+E1FF | *textTuplet3ShortStem*, U+E1FA | *textCont16thBeamLongStem*, U+E209 | *textHeadlessBlackNoteFrac16thLongStem*, U+E1FC | *textAugmentationDot*, U+E1FB | *textCont32ndBeamLongStem*, U+E206 | *textHeadlessBlackNoteFrac8thShortStem*, U+E207 | *textHeadlessBlackNoteFrac8thLongStem*, U+E200 | *textTupletBracketEndShortStem*, U+E201 | *textTupletBracketStartLongStem*, U+E202 | *textTuplet3LongStem*, U+E203 | *textTupletBracketEndLongStem*, U+E208 | *textHeadlessBlackNoteFrac16thShortStem*, U+E1F8 | *textCont8thBeamLongStem*, U+E1F5 | *textBlackNoteFrac16thLongStem*, U+E1F4 | *textBlackNoteFrac16thShortStem*, U+E1F6 | *textBlackNoteFrac32ndLongStem*, U+E1F1 | *textBlackNoteLongStem*, U+E1F0 | *textBlackNoteShortStem*, U+E1F3 | *textBlackNoteFrac8thLongStem*, U+E1F2 | *textBlackNoteFrac8thShortStem*, U+E1F9 | *textCont16thBeamShortStem*, U+E20A | *textHeadlessBlackNoteFrac32ndLongStem*
+ U+E1FF | *textTuplet3ShortStem*, U+E1FA | *textCont16thBeamLongStem*, U+E209 | *textHeadlessBlackNoteFrac16thLongStem*, U+E1FC | *textAugmentationDot*, U+E1FB | *textCont32ndBeamLongStem*, U+E206 | *textHeadlessBlackNoteFrac8thShortStem*, U+E207 | *textHeadlessBlackNoteFrac8thLongStem*, U+E200 | *textTupletBracketEndShortStem*, U+E201 | *textTupletBracketStartLongStem*, U+E202 | *textTuplet3LongStem*, U+E203 | *textTupletBracketEndLongStem*, U+E208 | *textHeadlessBlackNoteFrac16thShortStem*, U+E1F8 | *textCont8thBeamLongStem*, U+E1F5 | *textBlackNoteFrac16thLongStem*, U+E1F4 | *textBlackNoteFrac16thShortStem*, U+E1F6 | *textBlackNoteFrac32ndLongStem*, U+E1F1 | *textBlackNoteLongStem*, U+E1F0 | *textBlackNoteShortStem*, U+E1F3 | *textBlackNoteFrac8thLongStem*, U+E1F2 | *textBlackNoteFrac8thShortStem*, U+E1F9 | *textCont16thBeamShortStem*, U+E20A | *textHeadlessBlackNoteFrac32ndLongStem*
 
 **Stems (U+E210-U+E21F)** </br>
 All
@@ -153,7 +153,7 @@ U+E220 | *tremolo1*, U+E225 | *tremoloFingered1*, U+E4A2 |
 *articStaccatoAbove*
 
 **Flags (U+E240-U+E25F)** </br>
- U+E24A | *flag256thUp*, U+E24B | *flag256thDown*, U+E24C | *flag512thUp*, U+E24D | *flag512thDown*, U+E24E | *flag1024thUp*, U+E24F | *flag1024thDown*, U+E244 | *flag32ndUp*, U+E245 | *flag32ndDown*, U+E246 | *flag64thUp*, U+E247 | *flag64thDown*, U+E248 | *flag128thUp*, U+E249 | *flag128thDown*
+ U+E24A | *flag256thUp*, U+E24B | *flag256thDown*, U+E24C | *flag512thUp*, U+E24D | *flag512thDown*, U+E24E | *flag1024thUp*, U+E24F | *flag1024thDown*, U+E244 | *flag32ndUp*, U+E245 | *flag32ndDown*, U+E246 | *flag64thUp*, U+E247 | *flag64thDown*, U+E248 | *flag128thUp*, U+E249 | *flag128thDown*
 \+ stylistic sets
 
 **Accordion (U+E8A0-U+E8DF)** </br>
@@ -163,10 +163,10 @@ All
  U+EC85 | *timeSigCut2*, U+EC86 | *timeSigCut3*
 
 **Turned time signatures (U+ECE0-U+ECEF)** </br>
-U+ECE0 | *timeSig0Turned*, U+ECE1 | *timeSig1Turned*, U+ECE2 | *timeSig2Turned*, U+ECE3 | *timeSig3Turned*, U+ECE4 | *timeSig4Turned*, U+ECE5 | *timeSig5Turned*, U+ECE6 | *timeSig6Turned*, U+ECE7 | *timeSig7Turned*, U+ECE8 | *timeSig8Turned*, U+ECE9 | *timeSig9Turned*, U+ECEA | *timeSigCommonTurned*, U+ECEB | *timeSigCutCommonTurned*
+U+ECE0 | *timeSig0Turned*, U+ECE1 | *timeSig1Turned*, U+ECE2 | *timeSig2Turned*, U+ECE3*timeSig3Turned*, U+ECE4 | *timeSig4Turned*, U+ECE5 | *timeSig5Turned*, U+ECE6 | *timeSig6Turned*, U+ECE7 | *timeSig7Turned*, U+ECE8 | *timeSig8Turned*, U+ECE9 | *timeSig9Turned*, U+ECEA | *timeSigCommonTurned*, U+ECEB | *timeSigCutCommonTurned*
 
 **Reversed time signatures (U+ECF0-U+ECFF)** </br>
- U+ECF0 | *timeSig0Reversed*, U+ECF1 | *timeSig1Reversed*, U+ECF2 | *timeSig2Reversed*, U+ECF3 | *timeSig3Reversed*, U+ECF4 | *timeSig4Reversed*, U+ECF5 | *timeSig5Reversed*, U+ECF6 | *timeSig6Reversed*, U+ECF7 | *timeSig7Reversed*, U+ECF8 | *timeSig8Reversed*, U+ECF9 | *timeSig9Reversed*, U+ECFA | *timeSigCommonReversed*, U+ECFB | *timeSigCutCommonReversed*
+ U+ECF0 | *timeSig0Reversed*, U+ECF1 | *timeSig1Reversed*, U+ECF2 | *timeSig2Reversed*, U+ECF3 | *timeSig3Reversed*, U+ECF4 | *timeSig4Reversed*, U+ECF5 | *timeSig5Reversed*, U+ECF6 | *timeSig6Reversed*, U+ECF7 | *timeSig7Reversed*, U+ECF8 | *timeSig8Reversed*, U+ECF9 | *timeSig9Reversed*, U+ECFA | *timeSigCommonReversed*, U+ECFB | *timeSigCutCommonReversed*
 
 Please experiment, enjoy and be sure to let me know if anything doesn't work or needs improvement!
 
