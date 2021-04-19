@@ -1,4 +1,4 @@
-#FLM:SMuFL Builder
+#FLM: SMuFL Builder
 
 # (c) 2021 by Knut Nergaard.
 # Use, modify and distribute as desired.
