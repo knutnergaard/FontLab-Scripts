@@ -1,4 +1,4 @@
-#FLM:Set SMuFL Names
+#FLM: Set SMuFL Names
 
 # Description:
 # This script retrieves discriptive SMuFL names from the latest published glyphnames.json metadata
