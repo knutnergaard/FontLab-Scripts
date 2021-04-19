@@ -1,7 +1,5 @@
 #FLM: SMuFL Builder
-
 # (c) 2021 by Knut Nergaard.
-# Use, modify and distribute as desired.
 
 from ConfigParser import SafeConfigParser
 from FL import *
