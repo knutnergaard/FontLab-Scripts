@@ -1,4 +1,4 @@
-#FLM Check Anchors
+#FLM: Check Anchors
 # -*- coding: utf-8 -*-
 
 # Version 1.1
