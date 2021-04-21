@@ -119,55 +119,158 @@ At present, there is no way to specify this on an option-by-option basis.
 
 The following sections are dedicated to specific ranges and font elements. A more thorough description of these is planned for a future installment of this documentation. Until then, their names should hopefully be self-explanatory enough to anyone with a general knowledge of music engraving and font creation and a familiarity with SMuFL more specifically.
 
-### Required and Created Glyphs
-A full overview of glyphs required for full support is in the works.
-For the time being, here's a list of all the ranges and glyphs SMuFLbuilder will create for you:
+###Required and Created Glyphs
 
+The following paragraphs give an overview of the ranges and glyphs that SMuFLbuilder is able  create, as well as the glyphs required to produce them.
+In some cases, glyphs not presently encoded in SMuFL are needed to build certain composites. These glyphs do not need to be encoded, and their names below are only recommendations. Their actual names, however, must be specified in the settings, under the section to which they apply.
 
-**Staves (U+E010-U+E02F)** </br>
+**Staves (U+E010-U+E02F)**
+<details open>
+<summary>Required</summary>
+None
+
+</details>
+<details open>
+<summary>Created</summary>
 All
 
+</details>
+**Barlines (U+E030-U+E03F)**
+<details open>
+<summary>Required</summary>
+None
 
-**Barlines (U+E030-U+E03F)** </br>
+</details>
+<details open>
+<summary>Created</summary>
 All
 
+</details>
+**Repeats (U+E040-U+E04F)**
+<details open>
+<summary>Required</summary>
+None
 
-**Repeats (U+E040-U+E04F)** </br>
+</details>
+<details open>
+<summary>Created</summary>
 All
 
-**Time signatures (U+E080-U+E09F)** </br>
- U+E08B | *timeSigCutCommon* | U+E097 | *timeSigFractionQuarter*, U+E098 | *timeSigFractionHalf*, U+E099 | *timeSigFractionThreeQuarters*, U+E09A | *timeSigFractionOneThird*, U+E09B | *timeSigFractionTwoThirds*
-\+ All Ligatures
+</details>
+**Time signatures (U+E080-U+E09F)**
+<details open>
+<summary>Required</summary>
+U+E080&nbsp;|&nbsp;*timeSig0*, U+E081&nbsp;|&nbsp;*timeSig1*, U+E082&nbsp;|&nbsp;*timeSig2*, U+E083&nbsp;|&nbsp;*timeSig3*, U+E084&nbsp;|&nbsp;*timeSig4*, U+E085&nbsp;|&nbsp;*timeSig5*, U+E086&nbsp;|&nbsp;*timeSig6*, U+E087&nbsp;|&nbsp;*timeSig7*, U+E088&nbsp;|&nbsp;*timeSig8*, U+E089&nbsp;|&nbsp;*timeSig9*, U+E08A&nbsp;|&nbsp;*timeSigCommon*, –&nbsp;|&nbsp;*timeSigVerticalStroke\**, U+E08E&nbsp;|&nbsp;*timeSigFractionalSlash*
 
-**Individual notes (U+E1D0-U+E1EF)** </br>
- U+E1D9 | *note16thUp*, U+E1D8 | *note8thDown*, U+E1D3 | *noteHalfUp*, U+E1D2 | *noteWhole*, U+E1D1 | *noteDoubleWholeSquare*, U+E1D0 | *noteDoubleWhole*, U+E1D7 | *note8thUp*, U+E1D6 | *noteQuarterDown*, U+E1D5 | *noteQuarterUp*, U+E1D4 | *noteHalfDown*, U+E1E0 | *note128thDown*, U+E1E1 | *note256thUp*, U+E1E2 | *note256thDown*, U+E1E3 | *note512thUp*, U+E1E4 | *note512thDown*, U+E1E5 | *note1024thUp*, U+E1E6 | *note1024thDown*, None | *None*, U+E1DC | *note32ndDown*, U+E1DB | *note32ndUp*, U+E1DA | *note16thDown*, U+E1DF | *note128thUp*, U+E1DE | *note64thDown*, U+E1DD | *note64thUp*
+</details>
+<details open>
+<summary>Created</summary>
+U+E08B&nbsp;|&nbsp;*timeSigCutCommon*, U+E097&nbsp;|&nbsp;*timeSigFractionQuarter*, U+E098&nbsp;|&nbsp;*timeSigFractionHalf*, U+E099&nbsp;|&nbsp;*timeSigFractionThreeQuarters*, U+E09A&nbsp;|&nbsp;*timeSigFractionOneThird*, U+E09B&nbsp;|&nbsp;*timeSigFractionTwoThirds*, All ligatures
 
-**Beamed groups of notes (U+E1F0-U+E20F)** </br>
- U+E1FF | *textTuplet3ShortStem*, U+E1FA | *textCont16thBeamLongStem*, U+E209 | *textHeadlessBlackNoteFrac16thLongStem*, U+E1FC | *textAugmentationDot*, U+E1FB | *textCont32ndBeamLongStem*, U+E206 | *textHeadlessBlackNoteFrac8thShortStem*, U+E207 | *textHeadlessBlackNoteFrac8thLongStem*, U+E200 | *textTupletBracketEndShortStem*, U+E201 | *textTupletBracketStartLongStem*, U+E202 | *textTuplet3LongStem*, U+E203 | *textTupletBracketEndLongStem*, U+E208 | *textHeadlessBlackNoteFrac16thShortStem*, U+E1F8 | *textCont8thBeamLongStem*, U+E1F5 | *textBlackNoteFrac16thLongStem*, U+E1F4 | *textBlackNoteFrac16thShortStem*, U+E1F6 | *textBlackNoteFrac32ndLongStem*, U+E1F1 | *textBlackNoteLongStem*, U+E1F0 | *textBlackNoteShortStem*, U+E1F3 | *textBlackNoteFrac8thLongStem*, U+E1F2 | *textBlackNoteFrac8thShortStem*, U+E1F9 | *textCont16thBeamShortStem*, U+E20A | *textHeadlessBlackNoteFrac32ndLongStem*
+</details>
+**Individual notes (U+E1D0-U+E1EF)**
+<details open>
+<summary>Required</summary>
+U+E0A0&nbsp;|&nbsp;*noteheadDoubleWhole*, U+E0A1&nbsp;|&nbsp;*noteheadDoubleWholeSquare*, U+E0A2&nbsp;|&nbsp;*noteheadWhole*, U+E0A3&nbsp;|&nbsp;*noteheadHalf*, U+E0A4&nbsp;|&nbsp;*noteheadBlack*, U+E1E7&nbsp;|&nbsp;*augmentationDot*, U+E210&nbsp;|&nbsp;*stem*, U+E240&nbsp;|&nbsp;*flag8thUp*, U+E241&nbsp;|&nbsp;*flag8thDown*, U+E242&nbsp;|&nbsp;*flag16thUp*, U+E243&nbsp;|&nbsp;*flag16thDown*, U+E250&nbsp;|&nbsp;*flagInternalUp*, U+E251&nbsp;|&nbsp;*flagInternalDown*
 
-**Stems (U+E210-U+E21F)** </br>
+</details>
+<details open>
+<summary>Created</summary>
 All
 
-**Tremolos (U+E220-U+E23F)** </br>
-U+E220 | *tremolo1*, U+E225 | *tremoloFingered1*, U+E4A2 |
-*articStaccatoAbove*
+</details>
+**Beamed groups of notes (U+E1F0-U+E20F)**
+<details open>
+<summary>Required</summary>
+U+E0A4&nbsp;|&nbsp;*noteheadBlack*, U+E1E7&nbsp;|&nbsp;*augmentationDot*, U+E1F7&nbsp;|&nbsp;*textCont8thBeamShortStem*, U+E1FE&nbsp;|&nbsp;*textTupletBracketStartShortStem*, U+E204&nbsp;|&nbsp;*textHeadlessBlackNoteShortStem*, U+E205&nbsp;|&nbsp;*textHeadlessBlackNoteLongStem*, U+E883&nbsp;|&nbsp;*tuplet3*
 
-**Flags (U+E240-U+E25F)** </br>
- U+E24A | *flag256thUp*, U+E24B | *flag256thDown*, U+E24C | *flag512thUp*, U+E24D | *flag512thDown*, U+E24E | *flag1024thUp*, U+E24F | *flag1024thDown*, U+E244 | *flag32ndUp*, U+E245 | *flag32ndDown*, U+E246 | *flag64thUp*, U+E247 | *flag64thDown*, U+E248 | *flag128thUp*, U+E249 | *flag128thDown*
-\+ stylistic sets
-
-**Accordion (U+E8A0-U+E8DF)** </br>
+</details>
+<details open>
+<summary>Created</summary>
 All
 
-**Time signatures supplement (U+EC80-U+EC8F)** </br>
- U+EC85 | *timeSigCut2*, U+EC86 | *timeSigCut3*
+</details>
+**Stems (U+E210-U+E21F)**
+<details open>
+<summary>Required</summary>
+U+E22A&nbsp;|&nbsp;*buzzRoll*, U+E22B&nbsp;|&nbsp;*pendereckiTremolo*, U+E263&nbsp;|&nbsp;*accidentalDoubleSharp*, U+E607&nbsp;|&nbsp;*windMultiphonicsBlackStem*, U+E608&nbsp;|&nbsp;*windMultiphonicsWhiteStem*, U+E609&nbsp;|&nbsp;*windMultiphonicsBlackWhiteStem*, U+E618&nbsp;|&nbsp;*stringsBowBehindBridge*, U+E619&nbsp;|&nbsp;*stringsBowOnBridge*, U+E61A&nbsp;|&nbsp;*stringsBowOnTailpiece*, U+E623&nbsp;|&nbsp;*stringsVibratoPulse*, U+E63B&nbsp;|&nbsp;*pluckedDampOnStem*, U+E645&nbsp;|&nbsp;*vocalSprechgesang*, U+E646&nbsp;|&nbsp;*vocalsSussurando*, U+E694&nbsp;|&nbsp;*harpStringNoiseStem*, U+E808&nbsp;|&nbsp;*pictSwishStem*
 
-**Turned time signatures (U+ECE0-U+ECEF)** </br>
-U+ECE0 | *timeSig0Turned*, U+ECE1 | *timeSig1Turned*, U+ECE2 | *timeSig2Turned*, U+ECE3*timeSig3Turned*, U+ECE4 | *timeSig4Turned*, U+ECE5 | *timeSig5Turned*, U+ECE6 | *timeSig6Turned*, U+ECE7 | *timeSig7Turned*, U+ECE8 | *timeSig8Turned*, U+ECE9 | *timeSig9Turned*, U+ECEA | *timeSigCommonTurned*, U+ECEB | *timeSigCutCommonTurned*
+</details>
+<details open>
+<summary>Created</summary>
+All
 
-**Reversed time signatures (U+ECF0-U+ECFF)** </br>
- U+ECF0 | *timeSig0Reversed*, U+ECF1 | *timeSig1Reversed*, U+ECF2 | *timeSig2Reversed*, U+ECF3 | *timeSig3Reversed*, U+ECF4 | *timeSig4Reversed*, U+ECF5 | *timeSig5Reversed*, U+ECF6 | *timeSig6Reversed*, U+ECF7 | *timeSig7Reversed*, U+ECF8 | *timeSig8Reversed*, U+ECF9 | *timeSig9Reversed*, U+ECFA | *timeSigCommonReversed*, U+ECFB | *timeSigCutCommonReversed*
+</details>
+**Tremolos (U+E220-U+E23F)**
+<details open>
+<summary>Required</summary>
+None
 
-Please experiment, enjoy and be sure to let me know if anything doesn't work or needs improvement!
+</details>
+<details open>
+<summary>Created</summary>
+U+E221&nbsp;|&nbsp;*tremolo2*, U+E222&nbsp;|&nbsp;*tremolo3*, U+E223&nbsp;|&nbsp;*tremolo4*, U+E224&nbsp;|&nbsp;*tremolo5*, U+E226&nbsp;|&nbsp;*tremoloFingered2*, U+E227&nbsp;|&nbsp;*tremoloFingered3*, U+E228&nbsp;|&nbsp;*tremoloFingered4*, U+E229&nbsp;|&nbsp;*tremoloFingered5*, U+E22E&nbsp;|&nbsp;*tremoloDivisiDots2*, U+E22F&nbsp;|&nbsp;*tremoloDivisiDots3*, U+E230&nbsp;|&nbsp;*tremoloDivisiDots4*, U+E231&nbsp;|&nbsp;*tremoloDivisiDots6*
+
+</details>
+**Flags (U+E240-U+E25F)**
+<details open>
+<summary>Required</summary>
+U+E242&nbsp;|&nbsp;*flag16thUp*, U+E243&nbsp;|&nbsp;*flag16thDown*, U+E250&nbsp;|&nbsp;*flagInternalUp*, U+E251&nbsp;|&nbsp;*flagInternalDown*
+
+</details>
+<details open>
+<summary>Created</summary>
+U+E24A&nbsp;|&nbsp;*flag256thUp*, U+E24B&nbsp;|&nbsp;*flag256thDown*, U+E24C&nbsp;|&nbsp;*flag512thUp*, U+E24D&nbsp;|&nbsp;*flag512thDown*, U+E24E&nbsp;|&nbsp;*flag1024thUp*, U+E24F&nbsp;|&nbsp;*flag1024thDown*, U+E244&nbsp;|&nbsp;*flag32ndUp*, U+E245&nbsp;|&nbsp;*flag32ndDown*, U+E246&nbsp;|&nbsp;*flag64thUp*, U+E247&nbsp;|&nbsp;*flag64thDown*, U+E248&nbsp;|&nbsp;*flag128thUp*, U+E249&nbsp;|&nbsp;*flag128thDown*, All stylistic sets
+
+</details>
+**Accordion (U+E8A0-U+E8DF)**
+<details open>
+<summary>Required</summary>
+None
+
+</details>
+<details open>
+<summary>Created</summary>
+All ranks and registration
+
+</details>
+**Time signatures supplement (U+EC80-U+EC8F)**
+<details open>
+<summary>Required</summary>
+None
+
+</details>
+<details open>
+<summary>Created</summary>
+U+EC85&nbsp;|&nbsp;*timeSigCut2*, U+EC86&nbsp;|&nbsp;*timeSigCut3*
+
+</details>
+**Turned time signatures (U+ECE0-U+ECEF)**
+<details open>
+<summary>Required</summary>
+None
+
+</details>
+<details open>
+<summary>Created</summary>
+All
+
+</details>
+**Reversed time signatures (U+ECF0-U+ECFF)**
+<details open>
+<summary>Required</summary>
+None
+
+</details>
+<details open>
+<summary>Created</summary>
+All
+
+</details>
+
+\* Component not encoded in SMuFL
+
+
+Please experiment, enjoy and please let me know if anything doesn't work or can be improved!
 
 Knut
