@@ -130,7 +130,7 @@ In some cases, glyphs not presently encoded in SMuFL are needed to build certain
 None
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
@@ -142,7 +142,7 @@ All
 None
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
@@ -154,7 +154,7 @@ All
 None
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
@@ -163,22 +163,22 @@ All
 **Time signatures (U+E080-U+E09F)**
 <details open>
 <summary>Required</summary>
-U+E080&nbsp;|&nbsp;*timeSig0*, U+E081&nbsp;|&nbsp;*timeSig1*, U+E082&nbsp;|&nbsp;*timeSig2*, U+E083&nbsp;|&nbsp;*timeSig3*, U+E084&nbsp;|&nbsp;*timeSig4*, U+E085&nbsp;|&nbsp;*timeSig5*, U+E086&nbsp;|&nbsp;*timeSig6*, U+E087&nbsp;|&nbsp;*timeSig7*, U+E088&nbsp;|&nbsp;*timeSig8*, U+E089&nbsp;|&nbsp;*timeSig9*, U+E08A&nbsp;|&nbsp;*timeSigCommon*, –&nbsp;|&nbsp;*timeSigVerticalStroke\**, U+E08E&nbsp;|&nbsp;*timeSigFractionalSlash*
+U+E080&nbsp;|&nbsp;<i>timeSig0</i>, U+E081&nbsp;|&nbsp;<i>timeSig1</i>, U+E082&nbsp;|&nbsp;<i>timeSig2</i>, U+E083&nbsp;|&nbsp;<i>timeSig3</i>, U+E084&nbsp;|&nbsp;<i>timeSig4</i>, U+E085&nbsp;|&nbsp;<i>timeSig5</i>, U+E086&nbsp;|&nbsp;<i>timeSig6</i>, U+E087&nbsp;|&nbsp;<i>timeSig7</i>, U+E088&nbsp;|&nbsp;<i>timeSig8</i>, U+E089&nbsp;|&nbsp;<i>timeSig9</i>, U+E08A&nbsp;|&nbsp;<i>timeSigCommon</i>, –&nbsp;|&nbsp;<i>timeSigVerticalStroke</i>, U+E08E&nbsp;|&nbsp;<i>timeSigFractionalSlash</i>
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
-U+E08B&nbsp;|&nbsp;*timeSigCutCommon*, U+E097&nbsp;|&nbsp;*timeSigFractionQuarter*, U+E098&nbsp;|&nbsp;*timeSigFractionHalf*, U+E099&nbsp;|&nbsp;*timeSigFractionThreeQuarters*, U+E09A&nbsp;|&nbsp;*timeSigFractionOneThird*, U+E09B&nbsp;|&nbsp;*timeSigFractionTwoThirds*, All ligatures
+U+E08B&nbsp;|&nbsp;<i>timeSigCutCommon</i>, U+E097&nbsp;|&nbsp;<i>timeSigFractionQuarter</i>, U+E098&nbsp;|&nbsp;<i>timeSigFractionHalf</i>, U+E099&nbsp;|&nbsp;<i>timeSigFractionThreeQuarters</i>, U+E09A&nbsp;|&nbsp;<i>timeSigFractionOneThird</i>, U+E09B&nbsp;|&nbsp;<i>timeSigFractionTwoThirds</i>, All ligatures
 
 </details>
 
 **Individual notes (U+E1D0-U+E1EF)**
 <details open>
 <summary>Required</summary>
-U+E0A0&nbsp;|&nbsp;*noteheadDoubleWhole*, U+E0A1&nbsp;|&nbsp;*noteheadDoubleWholeSquare*, U+E0A2&nbsp;|&nbsp;*noteheadWhole*, U+E0A3&nbsp;|&nbsp;*noteheadHalf*, U+E0A4&nbsp;|&nbsp;*noteheadBlack*, U+E1E7&nbsp;|&nbsp;*augmentationDot*, U+E210&nbsp;|&nbsp;*stem*, U+E240&nbsp;|&nbsp;*flag8thUp*, U+E241&nbsp;|&nbsp;*flag8thDown*, U+E242&nbsp;|&nbsp;*flag16thUp*, U+E243&nbsp;|&nbsp;*flag16thDown*, U+E250&nbsp;|&nbsp;*flagInternalUp*, U+E251&nbsp;|&nbsp;*flagInternalDown*
+U+E0A0&nbsp;|&nbsp;<i>noteheadDoubleWhole</i>, –&nbsp;|&nbsp;<i>uniE0A0.salt01</i>, U+E0A1&nbsp;|&nbsp;<i>noteheadDoubleWholeSquare</i>, U+E0A2&nbsp;|&nbsp;<i>noteheadWhole</i>, U+E0A3&nbsp;|&nbsp;<i>noteheadHalf</i>, U+E0A4&nbsp;|&nbsp;<i>noteheadBlack</i>, U+E1E7&nbsp;|&nbsp;<i>augmentationDot</i>, U+E210&nbsp;|&nbsp;<i>stem</i>, U+E240&nbsp;|&nbsp;<i>flag8thUp</i>, U+E241&nbsp;|&nbsp;<i>flag8thDown</i>, U+E242&nbsp;|&nbsp;<i>flag16thUp</i>, U+E243&nbsp;|&nbsp;<i>flag16thDown</i>, U+E250&nbsp;|&nbsp;<i>flagInternalUp</i>, U+E251&nbsp;|&nbsp;<i>flagInternalDown</i>
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
@@ -187,10 +187,10 @@ All
 **Beamed groups of notes (U+E1F0-U+E20F)**
 <details open>
 <summary>Required</summary>
-U+E0A4&nbsp;|&nbsp;*noteheadBlack*, U+E1E7&nbsp;|&nbsp;*augmentationDot*, U+E1F7&nbsp;|&nbsp;*textCont8thBeamShortStem*, U+E1FE&nbsp;|&nbsp;*textTupletBracketStartShortStem*, U+E204&nbsp;|&nbsp;*textHeadlessBlackNoteShortStem*, U+E205&nbsp;|&nbsp;*textHeadlessBlackNoteLongStem*, U+E883&nbsp;|&nbsp;*tuplet3*
+U+E0A4&nbsp;|&nbsp;<i>noteheadBlack</i>, U+E883&nbsp;|&nbsp;<i>tuplet3</i>
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
@@ -199,10 +199,10 @@ All
 **Stems (U+E210-U+E21F)**
 <details open>
 <summary>Required</summary>
-U+E22A&nbsp;|&nbsp;*buzzRoll*, U+E22B&nbsp;|&nbsp;*pendereckiTremolo*, U+E263&nbsp;|&nbsp;*accidentalDoubleSharp*, U+E607&nbsp;|&nbsp;*windMultiphonicsBlackStem*, U+E608&nbsp;|&nbsp;*windMultiphonicsWhiteStem*, U+E609&nbsp;|&nbsp;*windMultiphonicsBlackWhiteStem*, U+E618&nbsp;|&nbsp;*stringsBowBehindBridge*, U+E619&nbsp;|&nbsp;*stringsBowOnBridge*, U+E61A&nbsp;|&nbsp;*stringsBowOnTailpiece*, U+E623&nbsp;|&nbsp;*stringsVibratoPulse*, U+E63B&nbsp;|&nbsp;*pluckedDampOnStem*, U+E645&nbsp;|&nbsp;*vocalSprechgesang*, U+E646&nbsp;|&nbsp;*vocalsSussurando*, U+E694&nbsp;|&nbsp;*harpStringNoiseStem*, U+E808&nbsp;|&nbsp;*pictSwishStem*
+U+E22A&nbsp;|&nbsp;<i>buzzRoll</i>, U+E22B&nbsp;|&nbsp;<i>pendereckiTremolo</i>, U+E263&nbsp;|&nbsp;<i>accidentalDoubleSharp</i>, U+E607&nbsp;|&nbsp;<i>windMultiphonicsBlackStem</i>, U+E608&nbsp;|&nbsp;<i>windMultiphonicsWhiteStem</i>, U+E609&nbsp;|&nbsp;<i>windMultiphonicsBlackWhiteStem</i>, U+E618&nbsp;|&nbsp;<i>stringsBowBehindBridge</i>, U+E619&nbsp;|&nbsp;<i>stringsBowOnBridge</i>, U+E61A&nbsp;|&nbsp;<i>stringsBowOnTailpiece</i>, U+E623&nbsp;|&nbsp;<i>stringsVibratoPulse</i>, U+E63B&nbsp;|&nbsp;<i>pluckedDampOnStem</i>, U+E645&nbsp;|&nbsp;<i>vocalSprechgesang</i>, U+E646&nbsp;|&nbsp;<i>vocalsSussurando</i>, U+E694&nbsp;|&nbsp;<i>harpStringNoiseStem</i>, U+E808&nbsp;|&nbsp;<i>pictSwishStem</i>
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
@@ -214,21 +214,21 @@ All
 None
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
-U+E221&nbsp;|&nbsp;*tremolo2*, U+E222&nbsp;|&nbsp;*tremolo3*, U+E223&nbsp;|&nbsp;*tremolo4*, U+E224&nbsp;|&nbsp;*tremolo5*, U+E226&nbsp;|&nbsp;*tremoloFingered2*, U+E227&nbsp;|&nbsp;*tremoloFingered3*, U+E228&nbsp;|&nbsp;*tremoloFingered4*, U+E229&nbsp;|&nbsp;*tremoloFingered5*, U+E22E&nbsp;|&nbsp;*tremoloDivisiDots2*, U+E22F&nbsp;|&nbsp;*tremoloDivisiDots3*, U+E230&nbsp;|&nbsp;*tremoloDivisiDots4*, U+E231&nbsp;|&nbsp;*tremoloDivisiDots6*
+U+E221&nbsp;|&nbsp;<i>tremolo2</i>, U+E222&nbsp;|&nbsp;<i>tremolo3</i>, U+E223&nbsp;|&nbsp;<i>tremolo4</i>, U+E224&nbsp;|&nbsp;<i>tremolo5</i>, U+E226&nbsp;|&nbsp;<i>tremoloFingered2</i>, U+E227&nbsp;|&nbsp;<i>tremoloFingered3</i>, U+E228&nbsp;|&nbsp;<i>tremoloFingered4</i>, U+E229&nbsp;|&nbsp;<i>tremoloFingered5</i>, U+E22E&nbsp;|&nbsp;<i>tremoloDivisiDots2</i>, U+E22F&nbsp;|&nbsp;<i>tremoloDivisiDots3</i>, U+E230&nbsp;|&nbsp;<i>tremoloDivisiDots4</i>, U+E231&nbsp;|&nbsp;<i>tremoloDivisiDots6</i>
 
 </details>
 
 **Flags (U+E240-U+E25F)**
 <details open>
 <summary>Required</summary>
-U+E242&nbsp;|&nbsp;*flag16thUp*, U+E243&nbsp;|&nbsp;*flag16thDown*, U+E250&nbsp;|&nbsp;*flagInternalUp*, U+E251&nbsp;|&nbsp;*flagInternalDown*
+U+E242&nbsp;|&nbsp;<i>flag16thUp</i>, U+E243&nbsp;|&nbsp;<i>flag16thDown</i>, U+E250&nbsp;|&nbsp;<i>flagInternalUp</i>, U+E251&nbsp;|&nbsp;<i>flagInternalDown</i>
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
-U+E24A&nbsp;|&nbsp;*flag256thUp*, U+E24B&nbsp;|&nbsp;*flag256thDown*, U+E24C&nbsp;|&nbsp;*flag512thUp*, U+E24D&nbsp;|&nbsp;*flag512thDown*, U+E24E&nbsp;|&nbsp;*flag1024thUp*, U+E24F&nbsp;|&nbsp;*flag1024thDown*, U+E244&nbsp;|&nbsp;*flag32ndUp*, U+E245&nbsp;|&nbsp;*flag32ndDown*, U+E246&nbsp;|&nbsp;*flag64thUp*, U+E247&nbsp;|&nbsp;*flag64thDown*, U+E248&nbsp;|&nbsp;*flag128thUp*, U+E249&nbsp;|&nbsp;*flag128thDown*, All stylistic sets
+U+E24A&nbsp;|&nbsp;<i>flag256thUp</i>, U+E24B&nbsp;|&nbsp;<i>flag256thDown</i>, U+E24C&nbsp;|&nbsp;<i>flag512thUp</i>, U+E24D&nbsp;|&nbsp;<i>flag512thDown</i>, U+E24E&nbsp;|&nbsp;<i>flag1024thUp</i>, U+E24F&nbsp;|&nbsp;<i>flag1024thDown</i>, U+E244&nbsp;|&nbsp;<i>flag32ndUp</i>, U+E245&nbsp;|&nbsp;<i>flag32ndDown</i>, U+E246&nbsp;|&nbsp;<i>flag64thUp</i>, U+E247&nbsp;|&nbsp;<i>flag64thDown</i>, U+E248&nbsp;|&nbsp;<i>flag128thUp</i>, U+E249&nbsp;|&nbsp;<i>flag128thDown</i>, All stylistic sets
 
 </details>
 
@@ -238,7 +238,7 @@ U+E24A&nbsp;|&nbsp;*flag256thUp*, U+E24B&nbsp;|&nbsp;*flag256thDown*, U+E24C&nbs
 None
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All ranks and registration
 
@@ -250,19 +250,19 @@ All ranks and registration
 None
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
-U+EC85&nbsp;|&nbsp;*timeSigCut2*, U+EC86&nbsp;|&nbsp;*timeSigCut3*
+U+EC85&nbsp;|&nbsp;<i>timeSigCut2</i>, U+EC86&nbsp;|&nbsp;<i>timeSigCut3</i>
 
 </details>
 
 **Turned time signatures (U+ECE0-U+ECEF)**
 <details open>
 <summary>Required</summary>
-None
+U+E080&nbsp;|&nbsp;<i>timeSig0</i>, U+E081&nbsp;|&nbsp;<i>timeSig1</i>, U+E082&nbsp;|&nbsp;<i>timeSig2</i>, U+E083&nbsp;|&nbsp;<i>timeSig3</i>, U+E084&nbsp;|&nbsp;<i>timeSig4</i>, U+E085&nbsp;|&nbsp;<i>timeSig5</i>, U+E086&nbsp;|&nbsp;<i>timeSig6</i>, U+E087&nbsp;|&nbsp;<i>timeSig7</i>, U+E088&nbsp;|&nbsp;<i>timeSig8</i>, U+E089&nbsp;|&nbsp;<i>timeSig9</i>, U+E08A&nbsp;|&nbsp;<i>timeSigCommon</i>, U+E08B&nbsp;|&nbsp;<i>timeSigCutCommon</i>
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
@@ -271,10 +271,10 @@ All
 **Reversed time signatures (U+ECF0-U+ECFF)**
 <details open>
 <summary>Required</summary>
-None
+U+E080&nbsp;|&nbsp;<i>timeSig0</i>, U+E081&nbsp;|&nbsp;<i>timeSig1</i>, U+E082&nbsp;|&nbsp;<i>timeSig2</i>, U+E083&nbsp;|&nbsp;<i>timeSig3</i>, U+E084&nbsp;|&nbsp;<i>timeSig4</i>, U+E085&nbsp;|&nbsp;<i>timeSig5</i>, U+E086&nbsp;|&nbsp;<i>timeSig6</i>, U+E087&nbsp;|&nbsp;<i>timeSig7</i>, U+E088&nbsp;|&nbsp;<i>timeSig8</i>, U+E089&nbsp;|&nbsp;<i>timeSig9</i>, U+E08A&nbsp;|&nbsp;<i>timeSigCommon</i>, U+E08B&nbsp;|&nbsp;<i>timeSigCutCommon</i>
 
 </details>
-<details open>
+<details open>        
 <summary>Created</summary>
 All
 
