@@ -119,7 +119,7 @@ At present, there is no way to specify this on an option-by-option basis.
 
 The following sections are dedicated to specific ranges and font elements. A more thorough description of these is planned for a future installment of this documentation. Until then, their names should hopefully be self-explanatory enough to anyone with a general knowledge of music engraving and font creation and a familiarity with SMuFL more specifically.
 
-###Required and Created Glyphs
+### Required and Created Glyphs
 
 The following paragraphs give an overview of the ranges and glyphs that SMuFLbuilder is able  create, as well as the glyphs required to produce them.
 In some cases, glyphs not presently encoded in SMuFL are needed to build certain composites. These glyphs do not need to be encoded, and their names below are only recommendations. Their actual names, however, must be specified in the settings, under the section to which they apply.
