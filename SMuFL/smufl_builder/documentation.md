@@ -135,6 +135,7 @@ None
 All
 
 </details>
+
 **Barlines (U+E030-U+E03F)**
 <details open>
 <summary>Required</summary>
@@ -146,6 +147,7 @@ None
 All
 
 </details>
+
 **Repeats (U+E040-U+E04F)**
 <details open>
 <summary>Required</summary>
@@ -157,6 +159,7 @@ None
 All
 
 </details>
+
 **Time signatures (U+E080-U+E09F)**
 <details open>
 <summary>Required</summary>
@@ -168,6 +171,7 @@ U+E080&nbsp;|&nbsp;*timeSig0*, U+E081&nbsp;|&nbsp;*timeSig1*, U+E082&nbsp;|&nbsp
 U+E08B&nbsp;|&nbsp;*timeSigCutCommon*, U+E097&nbsp;|&nbsp;*timeSigFractionQuarter*, U+E098&nbsp;|&nbsp;*timeSigFractionHalf*, U+E099&nbsp;|&nbsp;*timeSigFractionThreeQuarters*, U+E09A&nbsp;|&nbsp;*timeSigFractionOneThird*, U+E09B&nbsp;|&nbsp;*timeSigFractionTwoThirds*, All ligatures
 
 </details>
+
 **Individual notes (U+E1D0-U+E1EF)**
 <details open>
 <summary>Required</summary>
@@ -179,6 +183,7 @@ U+E0A0&nbsp;|&nbsp;*noteheadDoubleWhole*, U+E0A1&nbsp;|&nbsp;*noteheadDoubleWhol
 All
 
 </details>
+
 **Beamed groups of notes (U+E1F0-U+E20F)**
 <details open>
 <summary>Required</summary>
@@ -190,6 +195,7 @@ U+E0A4&nbsp;|&nbsp;*noteheadBlack*, U+E1E7&nbsp;|&nbsp;*augmentationDot*, U+E1F7
 All
 
 </details>
+
 **Stems (U+E210-U+E21F)**
 <details open>
 <summary>Required</summary>
@@ -201,6 +207,7 @@ U+E22A&nbsp;|&nbsp;*buzzRoll*, U+E22B&nbsp;|&nbsp;*pendereckiTremolo*, U+E263&nb
 All
 
 </details>
+
 **Tremolos (U+E220-U+E23F)**
 <details open>
 <summary>Required</summary>
@@ -212,6 +219,7 @@ None
 U+E221&nbsp;|&nbsp;*tremolo2*, U+E222&nbsp;|&nbsp;*tremolo3*, U+E223&nbsp;|&nbsp;*tremolo4*, U+E224&nbsp;|&nbsp;*tremolo5*, U+E226&nbsp;|&nbsp;*tremoloFingered2*, U+E227&nbsp;|&nbsp;*tremoloFingered3*, U+E228&nbsp;|&nbsp;*tremoloFingered4*, U+E229&nbsp;|&nbsp;*tremoloFingered5*, U+E22E&nbsp;|&nbsp;*tremoloDivisiDots2*, U+E22F&nbsp;|&nbsp;*tremoloDivisiDots3*, U+E230&nbsp;|&nbsp;*tremoloDivisiDots4*, U+E231&nbsp;|&nbsp;*tremoloDivisiDots6*
 
 </details>
+
 **Flags (U+E240-U+E25F)**
 <details open>
 <summary>Required</summary>
@@ -223,6 +231,7 @@ U+E242&nbsp;|&nbsp;*flag16thUp*, U+E243&nbsp;|&nbsp;*flag16thDown*, U+E250&nbsp;
 U+E24A&nbsp;|&nbsp;*flag256thUp*, U+E24B&nbsp;|&nbsp;*flag256thDown*, U+E24C&nbsp;|&nbsp;*flag512thUp*, U+E24D&nbsp;|&nbsp;*flag512thDown*, U+E24E&nbsp;|&nbsp;*flag1024thUp*, U+E24F&nbsp;|&nbsp;*flag1024thDown*, U+E244&nbsp;|&nbsp;*flag32ndUp*, U+E245&nbsp;|&nbsp;*flag32ndDown*, U+E246&nbsp;|&nbsp;*flag64thUp*, U+E247&nbsp;|&nbsp;*flag64thDown*, U+E248&nbsp;|&nbsp;*flag128thUp*, U+E249&nbsp;|&nbsp;*flag128thDown*, All stylistic sets
 
 </details>
+
 **Accordion (U+E8A0-U+E8DF)**
 <details open>
 <summary>Required</summary>
@@ -234,6 +243,7 @@ None
 All ranks and registration
 
 </details>
+
 **Time signatures supplement (U+EC80-U+EC8F)**
 <details open>
 <summary>Required</summary>
@@ -245,6 +255,7 @@ None
 U+EC85&nbsp;|&nbsp;*timeSigCut2*, U+EC86&nbsp;|&nbsp;*timeSigCut3*
 
 </details>
+
 **Turned time signatures (U+ECE0-U+ECEF)**
 <details open>
 <summary>Required</summary>
@@ -256,6 +267,7 @@ None
 All
 
 </details>
+
 **Reversed time signatures (U+ECF0-U+ECFF)**
 <details open>
 <summary>Required</summary>
