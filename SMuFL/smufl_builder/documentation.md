@@ -163,7 +163,7 @@ All
 **Time signatures (U+E080-U+E09F)**
 <details open>
 <summary>Required</summary>
-U+E080&nbsp;|&nbsp;<i>timeSig0</i>, U+E081&nbsp;|&nbsp;<i>timeSig1</i>, U+E082&nbsp;|&nbsp;<i>timeSig2</i>, U+E083&nbsp;|&nbsp;<i>timeSig3</i>, U+E084&nbsp;|&nbsp;<i>timeSig4</i>, U+E085&nbsp;|&nbsp;<i>timeSig5</i>, U+E086&nbsp;|&nbsp;<i>timeSig6</i>, U+E087&nbsp;|&nbsp;<i>timeSig7</i>, U+E088&nbsp;|&nbsp;<i>timeSig8</i>, U+E089&nbsp;|&nbsp;<i>timeSig9</i>, U+E08A&nbsp;|&nbsp;<i>timeSigCommon</i>, –&nbsp;|&nbsp;<i>timeSigVerticalStroke</i>, U+E08E&nbsp;|&nbsp;<i>timeSigFractionalSlash</i>
+U+E080&nbsp;|&nbsp;<i>timeSig0</i>, U+E081&nbsp;|&nbsp;<i>timeSig1</i>, U+E082&nbsp;|&nbsp;<i>timeSig2</i>, U+E083&nbsp;|&nbsp;<i>timeSig3</i>, U+E084&nbsp;|&nbsp;<i>timeSig4</i>, U+E085&nbsp;|&nbsp;<i>timeSig5</i>, U+E086&nbsp;|&nbsp;<i>timeSig6</i>, U+E087&nbsp;|&nbsp;<i>timeSig7</i>, U+E088&nbsp;|&nbsp;<i>timeSig8</i>, U+E089&nbsp;|&nbsp;<i>timeSig9</i>, U+E08A&nbsp;|&nbsp;<i>timeSigCommon</i>, -&nbsp;|&nbsp;<i>timeSigVerticalStroke*</i>, U+E08E&nbsp;|&nbsp;<i>timeSigFractionalSlash</i>
 
 </details>
 <details open>        
@@ -247,7 +247,7 @@ All ranks and registration
 **Time signatures supplement (U+EC80-U+EC8F)**
 <details open>
 <summary>Required</summary>
-None
+U+E082&nbsp;|&nbsp;<i>timeSig2</i>, U+E083&nbsp;|&nbsp;<i>timeSig3</i>, -&nbsp;|&nbsp;<i>timeSigVerticalStroke*</i>
 
 </details>
 <details open>        
