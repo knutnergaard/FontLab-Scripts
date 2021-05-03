@@ -43,7 +43,7 @@ alternates and ligatures where applicable:
 - [Time signatures supplement (U+EC80-U+EC8F)](#time-signatures-supplement-uec80-uec8f)
 - [Octaves supplement (U+EC90-U+EC9F)](#octaves-supplement-uec90-uec9f)
 - [Turned time signatures (U+ECE0-U+ECEF)](#turned-time-signatures-uece0-uecef)
-- [Reversed time signatures (U+ECF0-U+ECF](#reversed-time-signatures-uecf0-uecf)
+- [Reversed time signatures (U+ECF0-U+ECFF](#reversed-time-signatures-uecf0-uecff)
 
 ## Installation
 ### Automatically
