@@ -8,7 +8,7 @@ own specifications.
 
 Considering the many component-based symbols used in music notation generally,
 and the numerous – partially or fully – visually identical glyphs found
-in the SMuFL standard, makes SMuFLbuilder a real timesaver for any creator of
+in the SMuFL standard, SMuFLbuilder is a real timesaver for any creator of
 SMuFL fonts.
 
 ## Table of contents
