@@ -1,11 +1,25 @@
+"""Tools module for SMuFLbuilder.
+
+This module provides basic drawing functions tools used by makers to create
+specific glyphs and components.
+
+Functions:
+
+draw_rectangle() -- draws a rectangle
+draw_circle() -- draws a circle
+draw_slash() -- draws slash with vertical ends
+draw_rect_frame() -- draws an outlined rectangle
+draw_circle_frame() -- draws an outlined circle
+"""
+
 # (c) 2021 by Knut Nergaard.
 
 from smuflbuilder import helpers
 from FL import *
 
 
-def draw_square(glyph, p, width, height):
-    ''' Draws square of assigned width and height. '''
+def draw_rectangle(glyph, p, width, height):
+    '''Draws rectangle of assigned width and height.'''
     node = Node(17, Point(p.x, p.y - height))  # 17 = Move
     node.alignment = 0  # 0 = Sharp
     glyph.Add(node)
@@ -21,55 +35,66 @@ def draw_square(glyph, p, width, height):
     glyph.Add(node)
 
 
-def draw_circle(glyph, p, size):
-    ''' Draws circle of assigned radius. '''
+def draw_circle(glyph, p, radius):
+    '''Draws circle of assigned radius.'''
     degree = 0.5519
-    sd = size * degree  # Sets basier length to 55.19% of radius for circle.
-    node = Node(17, Point(p.x - size, p.y))  # 17 = Move
+    sd = radius * degree  # Sets basier length to 55.19% of radius for circle.
+    node = Node(17, Point(p.x - radius, p.y))  # 17 = Move
     node.alignment = 12288  # Fixed
     glyph.Add(node)  # Add starting point
 
     node.type = 35  # Curve
-
-    node.points = [Point(p.x, p.y - size), Point(p.x - size, p.y - sd), Point(p.x - sd, p.y - size)]
+    node.points = [Point(p.x, p.y - radius), Point(p.x - radius, p.y - sd),
+                   Point(p.x - sd, p.y - radius)]
+    glyph.Add(node)
+    node.points = [Point(p.x + radius, p.y), Point(p.x + sd, p.y - radius),
+                   Point(p.x + radius, p.y - sd)]
+    glyph.Add(node)
+    node.points = [Point(p.x, p.y + radius), Point(p.x + radius, p.y + sd),
+                   Point(p.x + sd, p.y + radius)]
+    glyph.Add(node)
+    node.points = [Point(p.x - radius, p.y), Point(p.x - sd, p.y + radius),
+                   Point(p.x - radius, p.y + sd)]
     glyph.Add(node)
 
-    node.points = [Point(p.x + size, p.y), Point(p.x + sd, p.y - size), Point(p.x + size, p.y - sd)]
+
+def draw_slash(glyph, p, width, left_height, right_height, thickness):
+    '''Draws slash with vertical ends.'''
+    thickness /= 2
+    node = Node(17, Point(p.x, p.y + left_height - thickness))  # 17 = Move
+    node.alignment = 0  # 0 = Sharp
     glyph.Add(node)
 
-    node.points = [Point(p.x, p.y + size), Point(p.x + size, p.y + sd), Point(p.x + sd, p.y + size)]
+    node.type = 1  # 1 = Line
+    node.points = [Point(p.x + width, p.y + right_height - thickness)]
     glyph.Add(node)
 
-    node.points = [Point(p.x - size, p.y), Point(p.x - sd, p.y + size), Point(p.x - size, p.y + sd)]
+    node.points = [Point(p.x + width, p.y + right_height + thickness)]
+    glyph.Add(node)
+
+    node.points = [Point(p.x, p.y + left_height + thickness)]
     glyph.Add(node)
 
 
-def draw_circle_frame(glyph, radius, thickness, overshoot):
-    ''' Draws circular frame of assigned radiusius and line thickness. '''
+def draw_rect_frame(glyph, p, width, height, thickness):
+    '''Draws square frame of assigned width, height and line thickness.'''
+    outer_width, outer_height = width + thickness, (height + thickness) / 2
+    draw_rectangle(glyph, p, outer_width, outer_height)
+
+    # Draw inner square.
+    inner_width, inner_height = width - thickness, (height - thickness) / 2
+    p.x += thickness
+    draw_rectangle(glyph, p, inner_width, -inner_height)
+
+
+def draw_circle_frame(glyph, p, radius, thickness):
+    '''Draws circular frame of assigned radius and line thickness.'''
     # Draw outer circle.
     outer_radius = radius + thickness / 2
-    x, y = outer_radius, outer_radius + overshoot
-    width = outer_radius * 2
-    registration = Point(x, y)
+    registration = p
     draw_circle(glyph, registration, outer_radius)
 
     # Draw inner circle.
     inner_radius = radius - thickness / 2
-    x, y = inner_radius + thickness, inner_radius + thickness + overshoot
-    registration = Point(x, y)
     draw_circle(glyph, registration, inner_radius)
     glyph.ReverseContour(1)
-
-
-def draw_square_frame(glyph, width, height, thickness):
-    ''' Draws square frame of assigned width, height and line thickness. '''
-    outer_width, outer_height = width + thickness, (height + thickness) / 2
-    x, y = 0, outer_height
-    registration = Point(x, y)
-    draw_square(glyph, registration, outer_width, outer_height)
-
-    # Draw inner square.
-    inner_width, inner_height = width - thickness, (height - thickness) / 2
-    x, y = thickness, outer_height
-    registration = Point(x, y)
-    draw_square(glyph, registration, inner_width, -inner_height)

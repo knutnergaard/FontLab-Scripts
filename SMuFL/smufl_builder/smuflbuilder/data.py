@@ -1,36 +1,94 @@
+"""Datamodule for SMuFLbuilder.
+
+Contains all glyphdata, except for a few special, hard-coded cases currently
+implemented.
+
+Except for datasets involving ligatures and special characters,
+the sets below are dictionaries with parent: child or child: parent
+relationship (depending on practicality).
+"""
+
 # (c) 2021 by Knut Nergaard.
 
+
+# pylint: disable=invalid-name
+
+# Ranges ======================================================================
+
+ranges = {
+    'staves': 'Staves (U+E010-U+E02F)',
+    'barlines': 'Barlines (U+E030-U+E03F)',
+    'repeats': 'Repeats (U+E040-U+E04F)',
+    'time': 'Time signatures (U+E080-U+E09F)',
+    'indv notes': 'Individual notes (U+E1D0-U+E1EF)',
+    'beamed notes': 'Beamed groups of notes (U+E1F0-U+E20F)',
+    'stems': 'Stems (U+E210-U+E21F)',
+    'tremolos': 'Tremolos (U+E220-U+E23F)',
+    'flags': 'Flags (U+E240-U+E25F)',
+    'octaves': 'Octaves (U+E510-U+E51F)',
+    'dynamics': 'Dynamics (U+E520-U+E54F)',
+    # 'Common ornaments (U+E560-U+E56F)',
+    # 'Other baroque ornaments (U+E570-U+E58F)',
+    # 'Precomposed trills and mordents: (U+E5B0-U+E5CF)',
+    'accordion': 'Accordion (U+E8A0-U+E8DF)',
+    'time sup': 'Time signatures supplement (U+EC80-U+EC8F)',
+    'octaves sup': 'Octaves supplement (U+EC90-U+EC9F)',
+    'turned time': 'Turned time signatures (U+ECE0-U+ECEF)',
+    'reversed time': 'Reversed time signatures (U+ECF0-U+ECFF)',
+}
+
+# Barlines and Repeats ========================================================
+
 barlines = {
-    'uniE031': ('uniE030', 'uniE030'),  # barlineDouble
-    'uniE032': ('uniE030', 'uniE034'),  # barlineFinal
-    'uniE033': ('uniE034', 'uniE030'),  # barlineReverseFinal
-    'uniE035': ('uniE034', 'uniE034'),  # barlineHeavyHeavy
+    # barlineDouble
+    'uniE031': ('uniE030', 'uniE030'),
+    # barlineFinal
+    'uniE032': ('uniE030', 'uniE034'),
+    # barlineReverseFinal
+    'uniE033': ('uniE034', 'uniE030'),
+    # barlineHeavyHeavy
+    'uniE035': ('uniE034', 'uniE034'),
     #  barlineDashed, barlineDotted, barlineShort, barlineTick
     None: ('uniE036', 'uniE037', 'uniE038', 'uniE039'),
 }
 
 repeat_barlines = {
-    'uniE040': ('uniE034', 'uniE030', 'uniE044', 'uniE044'),  # repeatLeft
-    'uniE041': ('uniE044', 'uniE044', 'uniE030', 'uniE034'),  # repeatRight
-    'uniE042': ('uniE044', 'uniE044', 'uniE030', 'uniE034', 'uniE030', 'uniE044', 'uniE044'),
+    # repeatLeft
+    'uniE040': ('uniE034', 'uniE030', 'uniE044', 'uniE044'),
+    # repeatRight
+    'uniE041': ('uniE044', 'uniE044', 'uniE030', 'uniE034'),
     # repeatRightLeft
-    'uniE043': ('uniE044', 'uniE044'),  # Repeat dots
+    'uniE042': ('uniE044', 'uniE044', 'uniE030', 'uniE034',
+                'uniE030', 'uniE044', 'uniE044'),
+    # Repeat dots
+    'uniE043': ('uniE044', 'uniE044'),
 }
 
 repeat_barlines_alt = {
-    'uniE042.salt01': ('uniE044', 'uniE044', 'uniE034', 'uniE034', 'uniE044', 'uniE044')
     # repeatRightLeftThick
+    'uniE042.salt01': ('uniE044', 'uniE044', 'uniE034',
+                       'uniE034', 'uniE044', 'uniE044')
 }
 
+# Staves ======================================================================
+
 staves = {
-    # parent : (child_1,    child_2,   child_3,   child_4,   child_5)
-    'uniE010': ('uniE011', 'uniE012', 'uniE013', 'uniE014', 'uniE015'),  # staffLine
-    'uniE016': ('uniE017', 'uniE018', 'uniE019', 'uniE01A', 'uniE01B'),  # staffLineWide
-    'uniE01C': ('uniE01D', 'uniE01E', 'uniE01F', 'uniE020', 'uniE021'),  # staffLineNarrow
-    'uniE022': None,  # legerLine
-    'uniE023': None,  # legerLineWide
-    'uniE024': None,  # legerLineNarrow
+    # parent : (children)
+    # staffLine
+    'uniE010': ('uniE011', 'uniE012', 'uniE013', 'uniE014', 'uniE015'),
+    # staffLineWide
+    'uniE016': ('uniE017', 'uniE018', 'uniE019', 'uniE01A', 'uniE01B'),
+    # staffLineNarrow
+    'uniE01C': ('uniE01D', 'uniE01E', 'uniE01F', 'uniE020', 'uniE021'),
+    # legerLine
+    'uniE022': None,
+    # legerLineWide
+    'uniE023': None,
+    # legerLineNarrow
+    'uniE024': None,
 }
+
+# Time signatures =============================================================
 
 time_fractions = {
     #  child:  (numerator,   slash,  denominator)
@@ -46,15 +104,21 @@ cut_time_common = {'uniE08A': 'uniE08B'}
 cut_time_sup = {'uniE082': 'uniEC85', 'uniE083': 'uniEC86'}
 
 turned_time = {
-    'uniE080': 'uniECE0', 'uniE081': 'uniECE1', 'uniE082': 'uniECE2', 'uniE083': 'uniECE3',
-    'uniE084': 'uniECE4', 'uniE085': 'uniECE5', 'uniE086': 'uniECE6', 'uniE087': 'uniECE7',
-    'uniE088': 'uniECE8', 'uniE089': 'uniECE9', 'uniE08A': 'uniECEA', 'uniE08B': 'uniECEB',
+    'uniE080': 'uniECE0', 'uniE081': 'uniECE1',
+    'uniE082': 'uniECE2', 'uniE083': 'uniECE3',
+    'uniE084': 'uniECE4', 'uniE085': 'uniECE5',
+    'uniE086': 'uniECE6', 'uniE087': 'uniECE7',
+    'uniE088': 'uniECE8', 'uniE089': 'uniECE9',
+    'uniE08A': 'uniECEA', 'uniE08B': 'uniECEB',
 }
 
 reversed_time = {
-    'uniE080': 'uniECF0', 'uniE081': 'uniECF1', 'uniE082': 'uniECF2', 'uniE083': 'uniECF3',
-    'uniE084': 'uniECF4', 'uniE085': 'uniECF5', 'uniE086': 'uniECF6', 'uniE087': 'uniECF7',
-    'uniE088': 'uniECF8', 'uniE089': 'uniECF9', 'uniE08A': 'uniECFA', 'uniE08B': 'uniECFB',
+    'uniE080': 'uniECF0', 'uniE081': 'uniECF1',
+    'uniE082': 'uniECF2', 'uniE083': 'uniECF3',
+    'uniE084': 'uniECF4', 'uniE085': 'uniECF5',
+    'uniE086': 'uniECF6', 'uniE087': 'uniECF7',
+    'uniE088': 'uniECF8', 'uniE089': 'uniECF9',
+    'uniE08A': 'uniECFA', 'uniE08B': 'uniECFB',
 }
 
 time_ligatures = (
@@ -72,8 +136,10 @@ time_ligatures = (
     'uniE09E_uniE081_uniE09E_uniE082_uniE09F_uniE088',
 )
 
-ctrl_char = ('uniE09E', 'uniE09F')
+ctrl_char = {'uniE09E', 'uniE09F'}
 
+
+# Notes =======================================================================
 
 stems = {
     # child:  parent
@@ -95,13 +161,6 @@ stems = {
     'uniE21F': 'uniE694',   # stemHarpStringNoise
 }
 
-tremolos = {
-    # parent:  (children)
-    'uniE220': ('uniE221', 'uniE222', 'uniE223', 'uniE224'),  # regular tremoli
-    'uniE225': ('uniE226', 'uniE227', 'uniE228', 'uniE229'),  # fingered tremoli
-    'uniE4A2': ('uniE22E', 'uniE22F', 'uniE230', 'uniE231'),  # divisi dots
-}
-
 
 flags = {
     'uniE244': ('uniE242', 'uniE250'),
@@ -112,11 +171,14 @@ flags = {
     'uniE249': ('uniE243', 'uniE251', 'uniE251', 'uniE251'),
     'uniE24A': ('uniE242', 'uniE250', 'uniE250', 'uniE250', 'uniE250'),
     'uniE24B': ('uniE243', 'uniE251', 'uniE251', 'uniE251', 'uniE251'),
-    'uniE24C': ('uniE242', 'uniE250', 'uniE250', 'uniE250', 'uniE250', 'uniE250'),
-    'uniE24D': ('uniE243', 'uniE251', 'uniE251', 'uniE251', 'uniE251', 'uniE251'),
-    'uniE24E': ('uniE242', 'uniE250', 'uniE250', 'uniE250', 'uniE250', 'uniE250', 'uniE250'),
-    'uniE24F': ('uniE243', 'uniE251', 'uniE251', 'uniE251', 'uniE251', 'uniE251', 'uniE251'),
-    #                     flag32nd, flag64th, flag128th, flag256th, flag512th, flag1024th
+    'uniE24C': ('uniE242', 'uniE250', 'uniE250',
+                'uniE250', 'uniE250', 'uniE250'),
+    'uniE24D': ('uniE243', 'uniE251', 'uniE251',
+                'uniE251', 'uniE251', 'uniE251'),
+    'uniE24E': ('uniE242', 'uniE250', 'uniE250',
+                'uniE250', 'uniE250', 'uniE250', 'uniE250'),
+    'uniE24F': ('uniE243', 'uniE251', 'uniE251',
+                'uniE251', 'uniE251', 'uniE251', 'uniE251'),
 }
 
 indv_notes = {
@@ -133,22 +195,31 @@ indv_notes = {
     'uniE1DA': ('uniE0A4', 'uniE210', 'uniE243'),  # note16ndDown
     'uniE1DB': ('uniE0A4', 'uniE210', 'uniE242', 'uniE250'),  # note32ndUp
     'uniE1DC': ('uniE0A4', 'uniE210', 'uniE243', 'uniE251'),  # note32ndDown
-    'uniE1DD': ('uniE0A4', 'uniE210', 'uniE242', 'uniE250', 'uniE250'),  # note32ndUp
-    'uniE1DE': ('uniE0A4', 'uniE210', 'uniE243', 'uniE251', 'uniE251'),  # note32ndDown
-    'uniE1DF': ('uniE0A4', 'uniE210', 'uniE242', 'uniE250', 'uniE250', 'uniE250'),  # note32ndUp
-    'uniE1E0': ('uniE0A4', 'uniE210', 'uniE243', 'uniE251', 'uniE251', 'uniE251'),  # note32ndDown
-    'uniE1E1': ('uniE0A4', 'uniE210', 'uniE242', 'uniE250', 'uniE250', 'uniE250', 'uniE250'),  # note64ndUp
-    'uniE1E2': ('uniE0A4', 'uniE210', 'uniE243', 'uniE251', 'uniE251', 'uniE251', 'uniE251'),  # note64ndDown
+    'uniE1DD': ('uniE0A4', 'uniE210',
+                'uniE242', 'uniE250', 'uniE250'),  # note32ndUp
+    'uniE1DE': ('uniE0A4', 'uniE210',
+                'uniE243', 'uniE251', 'uniE251'),  # note32ndDown
+    'uniE1DF': ('uniE0A4', 'uniE210', 'uniE242',
+                'uniE250', 'uniE250', 'uniE250'),  # note32ndUp
+    'uniE1E0': ('uniE0A4', 'uniE210', 'uniE243',
+                'uniE251', 'uniE251', 'uniE251'),  # note32ndDown
+    'uniE1E1': ('uniE0A4', 'uniE210', 'uniE242',
+                'uniE250', 'uniE250', 'uniE250', 'uniE250'),  # note64ndUp
+    'uniE1E2': ('uniE0A4', 'uniE210', 'uniE243',
+                'uniE251', 'uniE251', 'uniE251', 'uniE251'),  # note64ndDown
     'uniE1E3': ('uniE0A4', 'uniE210', 'uniE242', 'uniE250',
                 'uniE250', 'uniE250', 'uniE250', 'uniE250'),  # note128ndUp
     'uniE1E4': ('uniE0A4', 'uniE210', 'uniE243', 'uniE251',
                 'uniE251', 'uniE251', 'uniE251', 'uniE251'),  # note128ndDown
-    'uniE1E5': ('uniE0A4', 'uniE210', 'uniE242', 'uniE250',
-                'uniE250', 'uniE250', 'uniE250', 'uniE250', 'uniE250'),  # note256ndUp
-    'uniE1E6': ('uniE0A4', 'uniE210', 'uniE243', 'uniE251',
-                'uniE251', 'uniE251', 'uniE251', 'uniE251', 'uniE251'),  # note256ndDown
+    'uniE1E5': ('uniE0A4', 'uniE210', 'uniE242', 'uniE250', 'uniE250',
+                'uniE250', 'uniE250', 'uniE250', 'uniE250'),  # note256ndUp
+    'uniE1E6': ('uniE0A4', 'uniE210', 'uniE243', 'uniE251', 'uniE251',
+                'uniE251', 'uniE251', 'uniE251', 'uniE251'),  # note256ndDown
     None: ('uniE1E7',),
 }
+
+indv_notes_alt = {'uniE1D0.salt01': ('uniE0A0.salt01',)}
+
 
 beamed_notes = {
     'uniE1F0': ('uniE204', 'uniE0A4'),
@@ -175,7 +246,23 @@ beamed_notes = {
     'uniE20A': (None, 'uniE205', 'uniE1F7', 'uniE1F7', 'uniE1F7'),
 }
 
+# Tremolos ====================================================================
+
+tremolos = {
+    # parent:  (children)
+    'uniE220': ('uniE221', 'uniE222', 'uniE223', 'uniE224'),
+    # regular tremoli
+    'uniE225': ('uniE226', 'uniE227', 'uniE228', 'uniE229'),
+    # fingered tremoli
+    'uniE4A2': ('uniE22E', 'uniE22F', 'uniE230', 'uniE231'),
+    # divisi dots
+}
+
+# Ornaments ===================================================================
+
 common_ornaments = {
+    'uniE560': ('uniE0A4', 'uniE210', 'uniE240', 'uniE564'),
+    'uniE561': ('uniE0A4', 'uniE210', 'uniE241', 'uniE564'),
     'uniE568': ('uniE567',),
     'uniE569': ('uniE567', 'ornamentTurnVerticalStroke'),
     'uniE56B': ('uniE56A',),
@@ -192,7 +279,7 @@ other_ornaments = {
     'uniE586': ('uniE585',),
 }
 
-precomposed_ornaments = {
+precomp_ornaments = {
     'uniE5B0': ('uniE59D', 'uniE5A2'),
     'uniE5B1': ('uniE59D', 'uniE59D', 'uniE5A8'),
     'uniE5B2': ('uniE594', 'uniE59E', 'uniE59D'),
@@ -220,6 +307,15 @@ precomposed_ornaments = {
     'uniE5C8': ('uniE59D', 'uniE59D', 'uniE5A7'),
 }
 
+liga_ornaments = (
+    'uniE260_uniE566', 'uniE261_uniE566', 'uniE262_uniE566',
+    'uniE260_uniE567', 'uniE260_uniE567_uniE262', 'uniE567_uniE260',
+    'uniE261_uniE567', 'uniE567_uniE261', 'uniE262_uniE567',
+    'uniE262_uniE567_uniE260', 'uniE567_uniE262'
+)
+
+# Octaves =====================================================================
+
 octaves = {
     'uniE511': ('uniE510', 'uniEC97', 'uniEC91'),
     'uniE512': ('uniE510', 'uniEC97', 'uniEC91'),
@@ -232,14 +328,30 @@ octaves = {
     'uniE51D': ('uniE514', 'uniEC95', 'uniEC93'),
     'uniE51E': ('uniE517', 'uniEC95', 'uniEC93'),
     'uniE51F': ('uniEC93', 'uniEC91', 'octaveS', 'octaveS', 'uniEC91'),
-    'uniEC90': ('octaveL', 'octaveO', 'octaveC', 'octaveO'),
-    'uniEC91': ('uniEC92',),
-    'uniEC93': ('uniEC94',),
-    'uniEC95': ('uniEC96',),
-    'uniEC97': ('uniEC98',)
 }
 
+octaves_sup = {
+    'uniEC90': ('octaveL', 'octaveO', 'octaveC', 'octaveO'),
+    'uniEC92': ('uniEC91',),
+    'uniEC94': ('uniEC93',),
+    'uniEC96': ('uniEC95',),
+    'uniEC98': ('uniEC97',),
+}
+
+octaves_alt = {
+    'uniE515.salt01': ('uniE514.salt01', 'uniEC95', 'uniEC91'),
+    'uniE516.salt01': ('uniE514.salt01', 'uniEC95', 'uniEC91'),
+    'uniE518.salt01': ('uniE517.salt01', 'uniEC95', 'uniEC91'),
+    'uniE519.salt01': ('uniE517.salt01', 'uniEC95', 'uniEC91'),
+    'uniE51D.salt01': ('uniE514.salt01', 'uniEC95', 'uniEC93'),
+    'uniE51E.salt01': ('uniE517.salt01', 'uniEC95', 'uniEC93'),
+}
+
+# Dynamics ====================================================================
+
 dynamics = {
+    # None: ('uniE53E',),  # hairpin
+    None: ('uniE541',),  # niente circle
     'uniE527': ('uniE520',) * 6,
     'uniE528': ('uniE520',) * 5,
     'uniE529': ('uniE520',) * 4,
@@ -262,10 +374,16 @@ dynamics = {
     'uniE53A': ('uniE524', 'uniE522', 'uniE525', 'uniE520'),
     'uniE53B': ('uniE524', 'uniE522', 'uniE522', 'uniE525'),
     'uniE53C': ('uniE523', 'uniE522'),
-    'uniE53D': ('uniE523', 'uniE522', 'uniE525')
+    'uniE53D': ('uniE523', 'uniE522', 'uniE525'),
+    'uniE53F': ('uniE53E',),
+    'uniE540': ('uniE53E', 'uniE53E'),
 }
 
-accordion_ranks = {'uniE8C6': 3, 'uniE8C7': 4, 'uniE8C8': 2, 'uniE8C9': 3, 'uniE8CA': None}
+# Accordion ===================================================================
+
+accordion_ranks = {
+    'uniE8C6': 3, 'uniE8C7': 4, 'uniE8C8': 2, 'uniE8C9': 3, 'uniE8CA': None
+}
 
 accordion_reg = {
     # child : (ranks,     placement)
@@ -309,23 +427,6 @@ accordion_reg = {
     'uniE8C5': ('uniE8C9', 'stop2', 'left8stop', 'right8stop'),
 }
 
-do_not_decompose = ('uniE08B',)
+# Other =======================================================================
 
-ranges = {
-    'staves': 'Staves (U+E010-U+E02F)',
-    'barlines': 'Barlines (U+E030-U+E03F)',
-    'repeats': 'Repeats (U+E040-U+E04F)',
-    'time': 'Time signatures (U+E080-U+E09F)',
-    'indv notes': 'Individual notes (U+E1D0-U+E1EF)',
-    'beamed notes': 'Beamed groups of notes (U+E1F0-U+E20F)',
-    'stems': 'Stems (U+E210-U+E21F)',
-    'tremolos': 'Tremolos (U+E220-U+E23F)',
-    'flags': 'Flags (U+E240-U+E25F)',
-    # 'octaves': 'Octaves (U+E510-U+E51F)',
-    # 'dynamics': 'Dynamics (U+E520-U+E54F)',
-    'accordion': 'Accordion (U+E8A0-U+E8DF)',
-    'time sup': 'Time signatures supplement (U+EC80-U+EC8F)',
-    # 'octaves sup': 'Octaves supplement (U+EC90-U+EC9F)',
-    'turned time': 'Turned time signatures (U+ECE0-U+ECEF)',
-    'reversed time': 'Reversed time signatures (U+ECF0-U+ECFF)',
-}
+do_not_decompose = {'uniE08B', }
