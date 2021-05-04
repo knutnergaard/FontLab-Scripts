@@ -1,0 +1,17 @@
+SMuFLbuilder Version History
+============================
+
+This file provides an overview of public changes made between releases of SMuFLbuilder for FontLab.
+
+SMuFLbuilder version 0.1:
+- Initial pre-release.
+
+05/03/21 SMuFLbuilder version 0.2:
+- Added support for Time signature alternates.
+- Added support for bouble whole note alternate in Individual notes.
+- Added support for Octaves and Octaves supplement ranges.
+- Added settings to [Global]: [draw missing], [handle replaced] and [timestamp].
+- Added bash script to repair config filepath.
+- Added bash installer script.
+- Added support for Dynamics range, including drawing of hairpins and niente circle.
+- Added support for case-by-case exceptions to [Global][values in staff spaces].
