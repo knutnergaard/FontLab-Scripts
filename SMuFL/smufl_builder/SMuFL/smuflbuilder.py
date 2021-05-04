@@ -1,4 +1,4 @@
-# FLM: SMuFLbuilder
+#FLM: SMuFLbuilder
 
 """Top level script for SMuFLbuilder.
 
