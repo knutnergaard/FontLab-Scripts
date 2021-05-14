@@ -27,14 +27,17 @@
 
 import os
 import json
-from urllib.request import urlopen
+import urllib.request
 from datetime import date
 
 
 def get_json(url):
     ''''gets json source files from repository url.'''
-    with urlopen(url) as raw:
-        source = raw.read()
+    try:
+        with urllib.request.urlopen(url) as raw:
+            source = raw.read()
+    except urllib.request.URLError:
+        return('URLError: Unable to connect with online source')
     data = json.loads(source)
     return data
 
