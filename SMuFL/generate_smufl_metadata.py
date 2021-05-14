@@ -1,6 +1,6 @@
 #FLM: Generate SMuFL Metadata
 
-# Version 1.0
+# Version 1.1
 
 # Description:
 # Generates JSON metadata file for SMuFL fonts.
@@ -19,19 +19,19 @@
 # This script requires all glyphs to be named according to SMuFL guidelines, with recommended
 # characters adopting the 'uni' + Unicode value scheme. Ligatures, stylistic alternates and sets
 # should follow the descriptive scheme, with ligature names comprised of component names,
-# separated by underscore ('_'), and alternates and stylistic adopting the names of their
-# recommended counterparts, suffixed by .salt and .ss (plus index number) respectively.
+# separated by underscore ('_'), and alternates and stylistic alternates adopting the names of
+# their recommended counterparts, suffixed by .salt and .ss (plus index number) respectively.
 
-# Full support for glyph descriptions in optional glyphs and sets require additional string,
-# separated from descriptive name by an optional character, in the Note fields of appropriate
+# Full support for glyph descriptions in optional glyphs and sets require an additional string,
+# separated from the descriptive name by an optional character, in the Note fields of appropriate
 # glyphs. As a starting point, Bravura's glyph descriptions can be imported using the script Set
-# Optional Descriptions. String must be set manually for any unique glyphs.
+# Optional Descriptions. Descriptions must be set manually for non-standard glyphs.
 
 # By default the metadata file is saved to Desktop. Filepath can be set in OUTPUT_DIR below.
 # VALUE_SEPARATOR (carriage return (\r) by default) should be the same as in Notes and as specified
 # in Set Optional Descriptions.
 
-# This script is built upon Ben Timms's metadata generator for SMuFL fonts, which is available at
+# This script is based on Ben Timms's metadata generator for SMuFL fonts, which is available at
 # the SMuFL repository on GitHub (https://github.com/w3c/smufl).
 
 # (c) 2021 by Knut Nergaard.
@@ -39,10 +39,11 @@
 # Use, modify and distribute as desired.
 
 
-import json
 import os
 from time import localtime, strftime
-from urllib2 import urlopen
+import contextlib
+import urllib2
+import json
 from FL import *
 f = fl.font
 
@@ -183,8 +184,11 @@ def note_for_name(glyphname):
 
 def get_json(url):
     ''''gets json source files from repository url.'''
-    raw = urlopen(url)
-    source = raw.read()
+    try:
+        with contextlib.closing(urllib2.urlopen(url)) as raw:
+            source = raw.read()
+    except urllib2.URLError:
+        return('URLError: Unable to connect with online source')
     data = json.loads(source)
     return data
 
