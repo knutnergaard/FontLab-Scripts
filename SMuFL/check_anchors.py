@@ -16,16 +16,21 @@
 # Use, modify and distribute as desired.
 
 import os
+import contextlib
+import urllib2
 import json
-from urllib2 import urlopen
+
 
 f = fl.font
 
 
 def get_json(url):
     ''''gets json source files from repository url.'''
-    raw = urlopen(url)
-    source = raw.read()
+    try:
+        with contextlib.closing(urllib2.urlopen(url)) as raw:
+            source = raw.read()
+    except urllib2.URLError:
+        return('URLError: Unable to connect with online source')
     data = json.loads(source)
     return data
 
