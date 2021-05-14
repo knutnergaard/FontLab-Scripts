@@ -14,15 +14,19 @@
 # Use, modify and distribute as desired.
 
 
-import json
 import os
-from urllib2 import urlopen
+import contextlib
+import urllib2
+import json
 
 
 def get_json(url):
     ''''gets json source files from repository url.'''
-    raw = urlopen(url)
-    source = raw.read()
+    try:
+        with contextlib.closing(urllib2.urlopen(url)) as raw:
+            source = raw.read()
+    except urllib2.URLError:
+        return('URLError: Unable to connect with online source')
     data = json.loads(source)
     return data
 
