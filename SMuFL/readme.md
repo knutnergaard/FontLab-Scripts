@@ -43,7 +43,7 @@ Retrieves glyph descriptions for optional glyphs from the latest bravura metadat
 
 **Note:** This script is intended as preparation for metadata file generation, and should be run AFTER setting the descriptive smufl_names. The chosen value separator (carriage return (\r) by default) should be the same as in the metadata generator.
 
-### smufl_builder
+### SMuFLbuilder
 Python module for FontLab to build composites and draw rudimentary glyphs accross the scope of SMuFL.
 See dedicated readme file for more information.
 
