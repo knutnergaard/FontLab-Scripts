@@ -55,7 +55,7 @@ Please be advised that this software is in the early beta stages, and that
 you use this method **at your own risk!**
 
 ### Manually
-#####On Mac:
+##### On Mac:
 1. Move the folder `SMuFL` to `~/Library/Application Support/FontLab/Studio 5/Macros`.
 2. Move the module folder named `smuflbuilder` to `~/Library/Application Support/FontLab/Studio 5/Macros/System/Modules`.
 3. Move the folder named `SMuFLbuilder Settings` anywhere you like on your system,
@@ -66,7 +66,7 @@ manually by opening `filepaths.py` in the smuflbuilder module folder
 and entering your chosen path (including the filename) in between the empty
 quote marks of `user = ''`.
 
-#####On Windows:
+##### On Windows:
 The installation process on Windows is exactly the same as above, except that
 the filepaths will be different. You will also need to change the path for
 the default settings manually in filepaths.py to reflect the Windows syntax.
