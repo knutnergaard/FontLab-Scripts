@@ -91,7 +91,9 @@ Assuming **Python 2.7** is correctly installed on your system:
 
 1. Select Wiew > Toolbars > Macro in the application menu to show the Macro Toolbar.
 2. Choose `SMuFL` in the Top level dropdown and then `SMuFLbuilder` in the dropdown to the right.
-3. Press the triangular 'play' button to run the script.
+3. Press the triangular 'Play' button to run the script.
+
+**Be sure to press the circular 'Reset Script' button after any changes to `smuflbuilder.ini` (see below) before running the script.**
 
 Refer to the chapter *Macro Programming* in the FontLab Studio Manual for more detailed instructions.
 
